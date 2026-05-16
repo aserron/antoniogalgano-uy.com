@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const articlesDir = path.join(__dirname, '../docs/articles');
-const outputDir = path.join(__dirname, '../public_html/articulos');
+const outputDir = path.join(__dirname, '../public_html/news');
 
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
@@ -55,7 +55,7 @@ files.forEach(file => {
 </html>`;
 
   fs.writeFileSync(path.join(articleDir, 'index.html'), html);
-  console.log(`Generated: /articulos/${slug}/`);
+  console.log(`Generated: /news/${slug}/`);
 });
 
 console.log('✓ Article generation complete');

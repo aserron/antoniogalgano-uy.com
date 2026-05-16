@@ -11,4 +11,13 @@
     <xhtml:link rel="alternate" hreflang="es-419" href="https://antoniogalgano-uy.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://antoniogalgano.com/"/>
   </url>
+  <url>
+    <loc>https://antoniogalgano-uy.com/news/google-datacenter-uy/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-UY" href="https://antoniogalgano-uy.com/news/google-datacenter-uy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://antoniogalgano-uy.com/news/google-datacenter-uy/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://antoniogalgano-uy.com/news/google-datacenter-uy/"/>
+  </url>
 </urlset>
