@@ -50,10 +50,14 @@ export default function(eleventyConfig) {
     return content;
   });
 
-  // Copy static assets
-  eleventyConfig.addPassthroughCopy('public/**');
+  // Copy static assets (infrastructure files to root, not nested)
+  eleventyConfig.addPassthroughCopy({ 'public/robots.txt': 'robots.txt' });
+  eleventyConfig.addPassthroughCopy({ 'public/sitemap.xml': 'sitemap.xml' });
+  eleventyConfig.addPassthroughCopy({ 'public/manifest.json': 'manifest.json' });
+  eleventyConfig.addPassthroughCopy({ 'public/.htaccess': '.htaccess' });
+  eleventyConfig.addPassthroughCopy({ 'public/404.html': '404.html' });
+  eleventyConfig.addPassthroughCopy({ 'public/humans.txt': 'humans.txt' });
   eleventyConfig.addPassthroughCopy('src/images');
-  eleventyConfig.addPassthroughCopy('src/robots.txt');
   eleventyConfig.addPassthroughCopy('src/.well-known');
 
   // Configuration
