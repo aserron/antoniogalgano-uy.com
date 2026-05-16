@@ -1,0 +1,59 @@
+---
+layout: base
+title: "Noticias y Artículos | Antonio Galgano Votta"
+description: "Noticias, análisis y artículos sobre ciberseguridad, infraestructura IT y transformación digital en Uruguay."
+keywords: "Noticias, Artículos, Ciberseguridad, IT, Uruguay, AGESIC"
+permalink: /news/index.html
+---
+
+<main class="news-container">
+    <header class="news-header">
+        <h1>Noticias y Artículos</h1>
+        <p class="news-subtitle">Análisis y perspectivas sobre ciberseguridad, infraestructura digital y cumplimiento normativo en Uruguay</p>
+    </header>
+
+    {% if collections.articles.length > 0 %}
+    <section class="articles-grid" aria-label="Listado de artículos">
+        {% for article in collections.articles %}
+        <article class="article-card">
+            <header class="card-header">
+                <h2 class="card-title">
+                    <a href="/news/{{ article.data.slug }}/">
+                        {{ article.data.title }}
+                    </a>
+                </h2>
+            </header>
+
+            <div class="card-meta">
+                <time class="meta-date" datetime="{{ article.data.published | isoDate }}">
+                    {{ article.data.published | readableDate }}
+                </time>
+                <span class="meta-author">Por {{ article.data.author }}</span>
+                <span class="meta-reading-time">{{ article.data.read_time_minutes }} min lectura</span>
+            </div>
+
+            <p class="card-description">
+                {{ article.data.description }}
+            </p>
+
+            <footer class="card-footer">
+                <a href="/news/{{ article.data.slug }}/" class="card-link">
+                    Leer artículo →
+                </a>
+            </footer>
+        </article>
+        {% endfor %}
+    </section>
+
+    {% else %}
+    <div class="no-articles">
+        <p>No hay artículos publicados aún.</p>
+    </div>
+    {% endif %}
+
+    <section class="news-cta">
+        <h2>¿Interesado en Consultoría Técnica?</h2>
+        <p>Disponible para asesoría especializada en ciberseguridad, infraestructura digital y cumplimiento normativo.</p>
+        <a href="#contacto" class="cta-button">Solicitar Consultoría</a>
+    </section>
+</main>

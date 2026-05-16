@@ -1,4 +1,6 @@
 node_modules/
+_site/
+_cache/
 .DS_Store
 *.log
 npm-debug.log*
@@ -18,3 +20,4 @@ build/
 public_html/css/styles.css
 public_html/css/styles.css.map
 .claude/
+.parcel-cache/

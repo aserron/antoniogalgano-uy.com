@@ -1,0 +1,118 @@
+---
+layout: base
+---
+
+{% set schemaUrl = site.url + "/news/" + slug + "/" %}
+
+<main class="article-container">
+    <article class="article">
+        <!-- Article Header with Metadata -->
+        <header class="article-header">
+            <div class="article-breadcrumb">
+                <nav aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/news/">Noticias</a></li>
+                        <li aria-current="page">{{ title }}</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <h1 class="article-title">{{ title }}</h1>
+
+            <div class="article-meta">
+                <div class="meta-author">
+                    <span class="meta-label">Autor:</span>
+                    <span class="meta-value">{{ author or site.author.name }}</span>
+                </div>
+                {% if published %}
+                <div class="meta-date">
+                    <span class="meta-label">Publicado:</span>
+                    <time class="meta-value" datetime="{{ published | isoDate }}">
+                        {{ published | readableDate }}
+                    </time>
+                </div>
+                {% endif %}
+                {% if read_time_minutes %}
+                <div class="meta-reading-time">
+                    <span class="meta-label">Lectura:</span>
+                    <span class="meta-value">{{ read_time_minutes }} min</span>
+                </div>
+                {% endif %}
+            </div>
+
+            {% if description %}
+            <div class="article-excerpt">
+                {{ description }}
+            </div>
+            {% endif %}
+        </header>
+
+        <!-- Article Body Content -->
+        <div class="article-body">
+            {{ content | safe }}
+        </div>
+
+        <!-- Article Footer with Tags and CTA -->
+        <footer class="article-footer">
+            <div class="article-cta">
+                <h3>¿Necesita Asesoría Especializada?</h3>
+                <p>Disponible para consultoría técnica sobre infraestructura, ciberseguridad y cumplimiento normativo en Uruguay.</p>
+                <div class="article-cta-links">
+                    <a href="#contacto" class="cta-button primary">Solicitar Consultoría</a>
+                    <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" rel="noopener noreferrer" class="cta-button secondary">Conectar en LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Share Links -->
+            <div class="article-share">
+                <h4>Compartir este artículo:</h4>
+                <div class="share-buttons">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ schemaUrl | urlencode }}" target="_blank" rel="noopener noreferrer" class="share-link linkedin" aria-label="Compartir en LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://x.com/intent/tweet?url={{ schemaUrl | urlencode }}&text={{ title | urlencode }}&via=AntonioGalganoV" target="_blank" rel="noopener noreferrer" class="share-link twitter" aria-label="Compartir en X/Twitter">
+                        <span>X/Twitter</span>
+                    </a>
+                    <a href="mailto:?subject={{ title | urlencode }}&body=Lee%20este%20artículo:%20{{ schemaUrl | urlencode }}" class="share-link email" aria-label="Enviar por correo">
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Related Articles (Optional) -->
+            {% if collections.articles %}
+            <div class="article-related">
+                <h4>Artículos Relacionados:</h4>
+                <ul class="related-list">
+                    {% for article in collections.articles | limit(3) %}
+                        {% if article.data.slug !== slug %}
+                        <li>
+                            <a href="/news/{{ article.data.slug }}/">
+                                {{ article.data.title }}
+                            </a>
+                            <time datetime="{{ article.data.published | isoDate }}">
+                                {{ article.data.published | readableDate }}
+                            </time>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </footer>
+
+        <!-- Article Navigation -->
+        <nav class="article-nav" aria-label="Navegación de artículos">
+            <div class="nav-prev">
+                {# Previous article navigation can be added here #}
+            </div>
+            <div class="nav-back">
+                <a href="/news/">← Volver a Noticias</a>
+            </div>
+            <div class="nav-next">
+                {# Next article navigation can be added here #}
+            </div>
+        </nav>
+    </article>
+</main>

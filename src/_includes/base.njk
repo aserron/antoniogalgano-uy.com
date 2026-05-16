@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    {% if keywords %}
+    <meta name="keywords" content="{{ keywords }}">
+    {% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="alternate" hreflang="es-UY" href="{{ site.url }}{{ page.url }}">
+    <link rel="alternate" hreflang="es"    href="{{ site.url }}{{ page.url }}">
+    <link rel="alternate" hreflang="es-419" href="{{ site.url }}{{ page.url }}">
+    <link rel="alternate" hreflang="x-default" href="https://antoniogalgano.com/">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#07080f">
+    <link rel="author" href="/humans.txt">
+    <link rel="security" href="/.well-known/security.txt">
+    <link rel="icon" type="image/x-icon" href="/images/favico/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favico/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favico/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favico/favicon_io/apple-touch-icon.png">
+    <meta property="og:title" content="{{ title or site.title }}">
+    <meta property="og:description" content="{{ description or site.description }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="{% if published %}article{% else %}website{% endif %}">
+    <meta property="og:locale" content="{{ site.locale }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:image" content="{{ site.url }}/images/favico/favicon_io/android-chrome-512x512.png">
+    {% if published %}
+    <meta property="article:published_time" content="{{ published | isoDate }}">
+    <meta property="article:author" content="{{ author or site.author.name }}">
+    {% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AntonioGalganoV">
+    <meta name="twitter:creator" content="@AntonioGalganoV">
+    <link rel="stylesheet" href="/css/styles.css">
+    {% if published %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ title }}",
+        "description": "{{ description }}",
+        "image": "{{ site.url }}/images/favico/favicon_io/android-chrome-512x512.png",
+        "author": {
+            "@type": "Person",
+            "name": "{{ author or site.author.name }}"
+        },
+        "datePublished": "{{ published | isoDate }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ site.url }}{{ page.url }}"
+        }
+    }
+    </script>
+    {% else %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{ site.title }}",
+        "url": "{{ site.url }}",
+        "description": "{{ site.description }}",
+        "inLanguage": "{{ site.language }}",
+        "author": { "@type": "Person", "name": "{{ site.author.name }}" }
+    }
+    </script>
+    {% endif %}
+    {% block schema %}{% endblock %}
+</head>
+<body>
+    {{ content | safe }}
+    <script>
+        const observer = new IntersectionObserver(
+            (entries) => entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+            }),
+            { threshold: 0.08 }
+        );
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

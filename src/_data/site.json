@@ -1,0 +1,59 @@
+{
+  "title": "Antonio Galgano Votta | Consultor TI & Ciberseguridad en Uruguay",
+  "description": "Antonio Galgano Votta — Consultor TI y especialista en ciberseguridad en Uruguay. Más de 10 años de experiencia asesorando empresas uruguayas en infraestructura digital, protección de datos y cumplimiento AGESIC.",
+  "url": "https://antoniogalgano-uy.com",
+  "language": "es",
+  "locale": "es_UY",
+  "author": {
+    "name": "Antonio Galgano Votta",
+    "email": "contact@antoniogalgano-uy.com"
+  },
+  "nav": [
+    { "label": "Sobre mí", "anchor": "#sobre" },
+    { "label": "Servicios", "anchor": "#servicios" },
+    { "label": "Marco", "anchor": "#marco" },
+    { "label": "Contacto", "anchor": "#contacto" }
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/",
+    "twitter": "https://x.com/AntonioGalganoV"
+  },
+  "networks": [
+    {
+      "name": "antoniogalgano.com",
+      "url": "https://antoniogalgano.com",
+      "title": "Consultoría TI y Ciberseguridad Global",
+      "desc": "Consultoría Global"
+    },
+    {
+      "name": "antoniogalgano.es",
+      "url": "https://antoniogalgano.es",
+      "title": "Expertise TI en España",
+      "desc": "Servicios España"
+    },
+    {
+      "name": "antoniogalgano.net",
+      "url": "https://antoniogalgano.net",
+      "title": "Recursos e Inteligencia de Seguridad",
+      "desc": "Inteligencia y Recursos"
+    },
+    {
+      "name": "antonio-galgano-votta.com",
+      "url": "https://antonio-galgano-votta.com",
+      "title": "Guía de Seguridad Digital",
+      "desc": "Educación Digital"
+    },
+    {
+      "name": "antoniogalganovotta.com",
+      "url": "https://antoniogalganovotta.com",
+      "title": "Infraestructura NS y Especialista Digital",
+      "desc": "Infraestructura Crítica"
+    },
+    {
+      "name": "antoniogalganovotta.es",
+      "url": "https://antoniogalganovotta.es",
+      "title": "Infraestructura NS en España",
+      "desc": "Infraestructura España"
+    }
+  ]
+}
