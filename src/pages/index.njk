@@ -1,73 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antonio Galgano Votta | Consultor TI &amp; Ciberseguridad en Uruguay</title>
-    <meta name="description" content="Antonio Galgano Votta — Consultor TI y especialista en ciberseguridad en Uruguay. Más de 10 años de experiencia asesorando empresas uruguayas en infraestructura digital, protección de datos y cumplimiento AGESIC.">
-    
-    <meta name="keywords" content="Antonio Galgano Votta, Consultor TI Uruguay, Ciberseguridad Uruguay, AGESIC, Ley 18331, Protección de Datos Uruguay, Montevideo, Consultoría IT Uruguay">
-    
-    <meta name="author" content="Antonio Galgano Votta">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://antoniogalgano-uy.com/">
-    <link rel="alternate" hreflang="es-UY" href="https://antoniogalgano-uy.com/">
-    <link rel="alternate" hreflang="es"    href="https://antoniogalgano-uy.com/">
-    <link rel="alternate" hreflang="es-419" href="https://antoniogalgano-uy.com/">
-    <link rel="alternate" hreflang="x-default" href="https://antoniogalgano.com/">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#07080f">
-    <link rel="author" href="/humans.txt">
-    <link rel="security" href="/.well-known/security.txt">
-    <link rel="icon" type="image/x-icon" href="/images/favico/favicon_io/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favico/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favico/favicon_io/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favico/favicon_io/apple-touch-icon.png">
-    <meta property="og:title" content="Antonio Galgano Votta | Consultor TI &amp; Ciberseguridad en Uruguay">
-    <meta property="og:description" content="Antonio Galgano Votta — Consultor TI y especialista en ciberseguridad en Uruguay. Más de 10 años de experiencia asesorando empresas uruguayas en infraestructura digital, protección de datos y cumplimiento AGESIC.">
-    <meta property="og:url" content="https://antoniogalgano-uy.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_UY">
-    <meta property="og:site_name" content="Antonio Galgano Votta | Consultor TI &amp; Ciberseguridad en Uruguay">
-    <meta property="og:image" content="https://antoniogalgano-uy.com/images/favico/favicon_io/android-chrome-512x512.png">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@AntonioGalganoV">
-    <meta name="twitter:creator" content="@AntonioGalganoV">
-    <link rel="stylesheet" href="/css/styles.css">
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Antonio Galgano Votta | Consultor TI &amp; Ciberseguridad en Uruguay",
-        "url": "https://antoniogalgano-uy.com",
-        "description": "Antonio Galgano Votta — Consultor TI y especialista en ciberseguridad en Uruguay. Más de 10 años de experiencia asesorando empresas uruguayas en infraestructura digital, protección de datos y cumplimiento AGESIC.",
-        "inLanguage": "es",
-        "author": { "@type": "Person", "name": "Antonio Galgano Votta" }
-    }
-    </script>
-    
-    
-</head>
-<body class="bg-slate-950 text-slate-100">
-
-<!-- NAVIGATION -->
-<nav class="border-b border-slate-800 sticky top-0 z-50 bg-slate-950/95 backdrop-blur">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <a href="/" class="text-xl font-bold tracking-tighter hover:text-cyan-400 transition">AGV</a>
-        <div class="hidden md:flex gap-8">
-            <a href="/#sobre" class="text-sm font-medium hover:text-cyan-400 transition">Sobre mí</a>
-            <a href="/#servicios" class="text-sm font-medium hover:text-cyan-400 transition">Servicios</a>
-            <a href="/#marco" class="text-sm font-medium hover:text-cyan-400 transition">Marco UY</a>
-            <a href="/news/" class="text-sm font-medium hover:text-cyan-400 transition ">Noticias</a>
-            <a href="/#contacto" class="text-sm font-medium hover:text-cyan-400 transition">Contacto</a>
-        </div>
-        <a href="/#contacto" class="bg-cyan-500 text-slate-950 px-4 py-2 text-sm font-semibold rounded hover:bg-cyan-400 transition">Contacto</a>
-    </div>
-</nav>
-
-<!-- CONTENT -->
+---
+layout: base
+title: "Antonio Galgano Votta | Consultor TI & Ciberseguridad en Uruguay"
+description: "Antonio Galgano Votta — Consultor TI y especialista en ciberseguridad en Uruguay. Más de 10 años de experiencia asesorando empresas uruguayas en infraestructura digital, protección de datos y cumplimiento AGESIC."
+keywords: "Antonio Galgano Votta, Consultor TI Uruguay, Ciberseguridad Uruguay, AGESIC, Ley 18331, Protección de Datos Uruguay, Montevideo, Consultoría IT Uruguay"
+permalink: /index.html
+---
 
 <script type="application/ld+json">
 {
@@ -261,28 +198,24 @@
 </section>
 
 <!-- NOTICIAS SECTION -->
-
+{% if collections.articles and collections.articles.length > 0 %}
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800">
     <div class="flex justify-between items-center mb-12">
         <h2 class="text-4xl font-bold">Últimas Noticias</h2>
         <a href="/news/" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">Ver todas →</a>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
-        <a href="/news/google-datacenter-ecosistema-tech/" class="group p-6 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition">
-            <p class="text-xs text-slate-400 font-mono mb-2">15 mayo 2026</p>
-            <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition">Google Data Center: El Catalizador que Redefine el Ecosistema Tech Uruguayo</h3>
-            <p class="text-slate-400 mb-4 line-clamp-2">Análisis del impacto transformador del data center de Google en Canelones. Cómo la inversión de 850M USD redefine la ingeniería de software, infraestructura, talento e innovación en Uruguay.</p>
-            <p class="text-xs text-slate-500">10 min de lectura</p>
+        {%- for article in collections.articles | limit(3) %}
+        <a href="{{ article.url }}" class="group p-6 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition">
+            <p class="text-xs text-slate-400 font-mono mb-2">{{ article.data.published | readableDate('es') }}</p>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition">{{ article.data.title }}</h3>
+            <p class="text-slate-400 mb-4 line-clamp-2">{{ article.data.description }}</p>
+            <p class="text-xs text-slate-500">{{ article.data.read_time_minutes }} min de lectura</p>
         </a>
-        <a href="/news/google-datacenter-uy/" class="group p-6 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition">
-            <p class="text-xs text-slate-400 font-mono mb-2">15 mayo 2026</p>
-            <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition">Google Anuncia Nuevo Data Center en Uruguay — Implicaciones para la Infraestructura Digital Local</h3>
-            <p class="text-slate-400 mb-4 line-clamp-2">Análisis del nuevo Google Data Center en Uruguay. Impacto en infraestructura digital, cloud computing, soberanía de datos y oportunidades para empresas locales.</p>
-            <p class="text-xs text-slate-500">8 min de lectura</p>
-        </a>
+        {%- endfor %}
     </div>
 </section>
-
+{% endif %}
 
 <!-- CONTACTO SECTION -->
 <section id="contacto" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800">
@@ -305,41 +238,3 @@
     </div>
 </section>
 
-
-
-<!-- FOOTER -->
-<footer class="border-t border-slate-800 mt-20 py-12 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-8">
-            <h3 class="text-sm font-semibold text-slate-400 mb-4">Sitios Relacionados</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-                <a href="https://antoniogalgano.com" class="text-slate-300 hover:text-cyan-400 transition">antoniogalgano.com</a>
-                <a href="https://antoniogalgano.es" class="text-slate-300 hover:text-cyan-400 transition">antoniogalgano.es</a>
-                <a href="https://antoniogalgano.net" class="text-slate-300 hover:text-cyan-400 transition">antoniogalgano.net</a>
-                <a href="https://antonio-galgano-votta.com" class="text-slate-300 hover:text-cyan-400 transition">antonio-galgano-votta.com</a>
-                <a href="https://antoniogalganovotta.com" class="text-slate-300 hover:text-cyan-400 transition">antoniogalganovotta.com</a>
-                <a href="https://antoniogalganovotta.es" class="text-slate-300 hover:text-cyan-400 transition">antoniogalganovotta.es</a>
-            </div>
-        </div>
-        <div class="pt-8 border-t border-slate-700 text-center text-sm text-slate-400">
-            <p>&copy; 2026 Antonio Galgano Votta. All rights reserved.</p>
-            <p class="mt-2">
-                <a href="/sitemap.xml" class="hover:text-cyan-400 transition">Sitemap</a> ·
-                <a href="/robots.txt" class="hover:text-cyan-400 transition">Robots.txt</a> ·
-                <a href="/news/" class="hover:text-cyan-400 transition">Noticias</a>
-            </p>
-        </div>
-    </div>
-</footer>
-
-    <script>
-        const observer = new IntersectionObserver(
-            (entries) => entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-            }),
-            { threshold: 0.08 }
-        );
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
-</body>
-</html>

@@ -50,83 +50,133 @@
     
     
 </head>
-<body>
-    
-<main class="news-container">
-    <header class="news-header">
-        <h1>Noticias y Artículos</h1>
-        <p class="news-subtitle">Análisis y perspectivas sobre ciberseguridad, infraestructura digital y cumplimiento normativo en Uruguay</p>
+<body class="bg-slate-950 text-slate-100">
+
+<!-- NAVIGATION -->
+<nav class="border-b border-slate-800 sticky top-0 z-50 bg-slate-950/95 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold tracking-tighter hover:text-cyan-400 transition">AGV</a>
+        <div class="hidden md:flex gap-8">
+            <a href="/#sobre" class="text-sm font-medium hover:text-cyan-400 transition">Sobre mí</a>
+            <a href="/#servicios" class="text-sm font-medium hover:text-cyan-400 transition">Servicios</a>
+            <a href="/#marco" class="text-sm font-medium hover:text-cyan-400 transition">Marco UY</a>
+            <a href="/news/" class="text-sm font-medium hover:text-cyan-400 transition text-cyan-400">Noticias</a>
+            <a href="/#contacto" class="text-sm font-medium hover:text-cyan-400 transition">Contacto</a>
+        </div>
+        <a href="/#contacto" class="bg-cyan-500 text-slate-950 px-4 py-2 text-sm font-semibold rounded hover:bg-cyan-400 transition">Contacto</a>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- HEADER -->
+    <header class="py-16 sm:py-20 border-b border-slate-800">
+        <h1 class="text-5xl sm:text-6xl font-bold mb-4 tracking-tight">Noticias y Artículos</h1>
+        <p class="text-xl text-slate-300 max-w-2xl">Análisis y perspectivas sobre ciberseguridad, infraestructura digital y cumplimiento normativo en Uruguay</p>
     </header>
 
+    <!-- ARTICLES GRID -->
     
-    <section class="articles-grid" aria-label="Listado de artículos">
-        
-        <article class="article-card">
-            <header class="card-header">
-                <h2 class="card-title">
-                    <a href="/news/google-datacenter-ecosistema-tech/">
-                        Google Data Center: El Catalizador que Redefine el Ecosistema Tech Uruguayo
+    <section class="py-16 sm:py-20" aria-label="Listado de artículos">
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <article class="group p-8 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition flex flex-col">
+                <header class="mb-4">
+                    <h2 class="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition">
+                        <a href="/news/google-datacenter-ecosistema-tech/">
+                            Google Data Center: El Catalizador que Redefine el Ecosistema Tech Uruguayo
+                        </a>
+                    </h2>
+                </header>
+
+                <div class="flex flex-wrap gap-4 mb-4 text-xs text-slate-400">
+                    <time class="font-mono" datetime="2026-05-16">
+                        15 mayo 2026
+                    </time>
+                    <span>10 min lectura</span>
+                </div>
+
+                <p class="text-slate-300 mb-6 flex-grow leading-relaxed">
+                    Análisis del impacto transformador del data center de Google en Canelones. Cómo la inversión de 850M USD redefine la ingeniería de software, infraestructura, talento e innovación en Uruguay.
+                </p>
+
+                <footer>
+                    <a href="/news/google-datacenter-ecosistema-tech/" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">
+                        Leer artículo →
                     </a>
-                </h2>
-            </header>
+                </footer>
+            </article>
+            
+            <article class="group p-8 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition flex flex-col">
+                <header class="mb-4">
+                    <h2 class="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition">
+                        <a href="/news/google-datacenter-uy/">
+                            Google Anuncia Nuevo Data Center en Uruguay — Implicaciones para la Infraestructura Digital Local
+                        </a>
+                    </h2>
+                </header>
 
-            <div class="card-meta">
-                <time class="meta-date" datetime="2026-05-16">
-                    15 mayo 2026
-                </time>
-                <span class="meta-author">Por Antonio Galgano Votta</span>
-                <span class="meta-reading-time">10 min lectura</span>
-            </div>
+                <div class="flex flex-wrap gap-4 mb-4 text-xs text-slate-400">
+                    <time class="font-mono" datetime="2026-05-16">
+                        15 mayo 2026
+                    </time>
+                    <span>8 min lectura</span>
+                </div>
 
-            <p class="card-description">
-                Análisis del impacto transformador del data center de Google en Canelones. Cómo la inversión de 850M USD redefine la ingeniería de software, infraestructura, talento e innovación en Uruguay.
-            </p>
+                <p class="text-slate-300 mb-6 flex-grow leading-relaxed">
+                    Análisis del nuevo Google Data Center en Uruguay. Impacto en infraestructura digital, cloud computing, soberanía de datos y oportunidades para empresas locales.
+                </p>
 
-            <footer class="card-footer">
-                <a href="/news/google-datacenter-ecosistema-tech/" class="card-link">
-                    Leer artículo →
-                </a>
-            </footer>
-        </article>
-        
-        <article class="article-card">
-            <header class="card-header">
-                <h2 class="card-title">
-                    <a href="/news/google-datacenter-uy/">
-                        Google Anuncia Nuevo Data Center en Uruguay — Implicaciones para la Infraestructura Digital Local
+                <footer>
+                    <a href="/news/google-datacenter-uy/" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">
+                        Leer artículo →
                     </a>
-                </h2>
-            </header>
-
-            <div class="card-meta">
-                <time class="meta-date" datetime="2026-05-16">
-                    15 mayo 2026
-                </time>
-                <span class="meta-author">Por Antonio Galgano Votta</span>
-                <span class="meta-reading-time">8 min lectura</span>
-            </div>
-
-            <p class="card-description">
-                Análisis del nuevo Google Data Center en Uruguay. Impacto en infraestructura digital, cloud computing, soberanía de datos y oportunidades para empresas locales.
-            </p>
-
-            <footer class="card-footer">
-                <a href="/news/google-datacenter-uy/" class="card-link">
-                    Leer artículo →
-                </a>
-            </footer>
-        </article>
-        
+                </footer>
+            </article>
+            
+        </div>
     </section>
 
     
 
-    <section class="news-cta">
-        <h2>¿Interesado en Consultoría Técnica?</h2>
-        <p>Disponible para asesoría especializada en ciberseguridad, infraestructura digital y cumplimiento normativo.</p>
-        <a href="#contacto" class="cta-button">Solicitar Consultoría</a>
+    <!-- CTA SECTION -->
+    <section class="py-16 sm:py-20 border-t border-slate-800 text-center">
+        <h2 class="text-3xl font-bold mb-4">¿Interesado en Consultoría Técnica?</h2>
+        <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+            Disponible para asesoría especializada en ciberseguridad, infraestructura digital y cumplimiento normativo.
+        </p>
+        <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="bg-cyan-500 text-slate-950 px-8 py-4 font-semibold rounded hover:bg-cyan-400 transition inline-block">
+            Solicitar Consultoría
+        </a>
     </section>
 </main>
+
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 mt-20 py-12 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+            <h3 class="text-sm font-semibold text-slate-400 mb-4">Sitios Relacionados</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <a href="https://antoniogalgano.com" class="text-slate-300 hover:text-cyan-400 transition">antoniogalgano.com</a>
+                <a href="https://antoniogalgano.es" class="text-slate-300 hover:text-cyan-400 transition">antoniogalgano.es</a>
+                <a href="https://antoniogalgano.net" class="text-slate-300 hover:text-cyan-400 transition">antoniogalgano.net</a>
+                <a href="https://antonio-galgano-votta.com" class="text-slate-300 hover:text-cyan-400 transition">antonio-galgano-votta.com</a>
+                <a href="https://antoniogalganovotta.com" class="text-slate-300 hover:text-cyan-400 transition">antoniogalganovotta.com</a>
+                <a href="https://antoniogalganovotta.es" class="text-slate-300 hover:text-cyan-400 transition">antoniogalganovotta.es</a>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-slate-700 text-center text-sm text-slate-400">
+            <p>&copy; 2026 Antonio Galgano Votta. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="/sitemap.xml" class="hover:text-cyan-400 transition">Sitemap</a> ·
+                <a href="/robots.txt" class="hover:text-cyan-400 transition">Robots.txt</a> ·
+                <a href="/news/" class="hover:text-cyan-400 transition">Noticias</a>
+            </p>
+        </div>
+    </div>
+</footer>
 
     <script>
         const observer = new IntersectionObserver(
