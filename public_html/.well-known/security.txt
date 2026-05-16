@@ -1,0 +1,9 @@
+# ═══ SECURITY.TXT — VULNERABILITY DISCLOSURE ═══════════════════════
+# Protocol: https://securitytxt.org/
+# Scope: antoniogalgano-uy.com
+# ═══════════════════════════════════════════════════════════════════
+
+Contact: mailto:aserron.dev@gmail.com
+Expires: 2027-05-16T00:00:00.000Z
+Preferred-Languages: es
+Canonical: https://antoniogalgano-uy.com/.well-known/security.txt

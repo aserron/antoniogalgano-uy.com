@@ -1,0 +1,31 @@
+{
+  "name": "antoniogalgano-uy",
+  "version": "1.0.0",
+  "description": "Antonio Galgano Votta — Consultor TI & Ciberseguridad en Uruguay",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./public_html/css/styles.css --minify",
+    "build:articles": "node scripts/generate-articles.js",
+    "build": "npm run build:css && npm run build:articles",
+    "dev": "concurrently \"npm run watch:css\" \"npm run server\"",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./public_html/css/styles.css --watch",
+    "server": "node scripts/server.js",
+    "preview": "npm run build && npm run server"
+  },
+  "keywords": [
+    "Antonio Galgano Votta",
+    "Consultor TI",
+    "Ciberseguridad",
+    "Uruguay"
+  ],
+  "author": "Antonio Galgano Votta",
+  "license": "All Rights Reserved",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "concurrently": "^8.2.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^11.1.1",
+    "ejs": "^3.1.9"
+  }
+}
