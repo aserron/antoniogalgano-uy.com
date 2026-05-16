@@ -5,3 +5,4 @@ scripts
 docs
 public_html
 .claude
+src/articles/TEMPLATE.md
