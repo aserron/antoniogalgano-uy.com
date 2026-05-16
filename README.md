@@ -179,6 +179,37 @@ More content here.
 
 3. Run `npm run dev` or `npm run build`
 4. Article is generated at `_site/news/article-slug/index.html`
+5. **Sitemap automatically updated** — `collections.articles` → `/sitemap.xml`
+
+### Complete Article Workflow
+
+When you create a new article:
+
+```bash
+# 1. Create article file
+cp src/articles/TEMPLATE.md src/articles/2026-05-20-my-article.md
+
+# 2. Edit: add frontmatter (title, slug, description, keywords, published date)
+# 3. Write: add Markdown content
+
+# 4. Build (or preview)
+pnpm run build
+# This:
+# - Parses article YAML → adds to collections.articles
+# - Renders article via article.njk → /news/{slug}/index.html
+# - Re-renders sitemap.njk → /sitemap.xml (includes new article)
+# - Compiles CSS
+# - Copies everything to public_html/
+
+# 5. Deploy
+scp -r public_html/* user@server:/path/to/public_html/
+```
+
+**What gets updated automatically:**
+- ✅ Article page at `/news/{slug}/`
+- ✅ News listing at `/news/` (includes new article in grid)
+- ✅ Sitemap at `/sitemap.xml` (includes new article with lastmod date)
+- ✅ All SEO signals (canonical, hreflang, OG, Twitter Card, Schema.org)
 
 ### Frontmatter Fields
 
@@ -242,11 +273,29 @@ Each article automatically includes:
 - ✓ Schema.org Article type (JSON-LD)
 - ✓ Meta robots (`index, follow`)
 
-### Sitemap
+### Sitemap (Auto-Generated)
 
-The sitemap is handled via:
-- `src/robots.txt` — References sitemap location
-- Manual `public_html/sitemap.xml` — Currently static; can be auto-generated with 11ty plugin
+The sitemap is **dynamically generated** from your article collection:
+
+**How it works:**
+1. Create a new article: `src/articles/YYYY-MM-DD-slug.md`
+2. Run `pnpm run build`
+3. 11ty automatically:
+   - Adds article to `collections.articles`
+   - Re-renders `src/sitemap.njk` → `/sitemap.xml`
+   - Includes all articles + news index + homepage
+
+**Files:**
+- `src/sitemap.njk` — Nunjucks template that generates `/sitemap.xml`
+- `public/robots.txt` — References sitemap location
+- `public_html/sitemap.xml` — Auto-generated XML (ready for Google)
+
+**Sitemap includes:**
+- Homepage (priority 1.0, monthly)
+- News listing page (priority 0.9, weekly)
+- All articles (priority 0.8, never)
+- Each URL has hreflang alternates (es-UY primary, x-default → antoniogalgano.com)
+- Each article's `lastmod` automatically set from `published` date
 
 ### 404 Handling
 
