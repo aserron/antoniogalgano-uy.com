@@ -19,6 +19,7 @@
     <xhtml:link rel="alternate" hreflang="es-UY" href="https://antoniogalgano-uy.com/news/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://antoniogalgano-uy.com/news/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://antoniogalgano-uy.com/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://antoniogalgano.com/"/>
   </url>
   <url>
     <loc>https://antoniogalgano-uy.com/news/google-datacenter-ecosistema-tech/</loc>
@@ -28,6 +29,7 @@
     <xhtml:link rel="alternate" hreflang="es-UY" href="https://antoniogalgano-uy.com/news/google-datacenter-ecosistema-tech/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://antoniogalgano-uy.com/news/google-datacenter-ecosistema-tech/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://antoniogalgano-uy.com/news/google-datacenter-ecosistema-tech/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://antoniogalgano.com/"/>
   </url>
   <url>
     <loc>https://antoniogalgano-uy.com/news/google-datacenter-uy/</loc>
@@ -37,5 +39,6 @@
     <xhtml:link rel="alternate" hreflang="es-UY" href="https://antoniogalgano-uy.com/news/google-datacenter-uy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://antoniogalgano-uy.com/news/google-datacenter-uy/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://antoniogalgano-uy.com/news/google-datacenter-uy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://antoniogalgano.com/"/>
   </url>
 </urlset>

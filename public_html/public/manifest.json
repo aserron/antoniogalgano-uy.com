@@ -1,0 +1,33 @@
+{
+  "name": "Antonio Galgano Votta — Consultor TI & Ciberseguridad en Uruguay",
+  "short_name": "AGV Uruguay",
+  "description": "Consultor TI y especialista en ciberseguridad en Uruguay",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07080f",
+  "theme_color": "#00d8ff",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/images/favico/favicon_io/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favico/favicon_io/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favico/favicon_io/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favico/favicon_io/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
