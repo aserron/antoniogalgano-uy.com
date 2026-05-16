@@ -5,9 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./_site/css/styles.css --minify",
     "build:11ty": "eleventy",
-    "build": "npm run build:11ty && npm run build:css",
+    "build:css": "tailwindcss -i ./src/input.css -o ./_site/css/styles.css --minify",
+    "build:deploy": "node scripts/copy-to-public.js",
+    "build": "npm run build:11ty && npm run build:css && npm run build:deploy",
     "dev": "eleventy --serve",
     "watch": "concurrently \"eleventy --watch\" \"npm run watch:css\"",
     "watch:css": "tailwindcss -i ./src/input.css -o ./_site/css/styles.css --watch",
