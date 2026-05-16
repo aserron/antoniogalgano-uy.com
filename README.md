@@ -93,6 +93,18 @@ cd sites/antoniogalgano-uy.com
 pnpm install
 ```
 
+### Available Scripts
+
+| Command | Purpose |
+|---------|---------|
+| `pnpm run dev` | Start dev server with watch (auto-rebuild on file changes) |
+| `pnpm run build` | Full build: 11ty + CSS + deploy to `public_html/` |
+| `pnpm run build:11ty` | Run 11ty only (articles → `_site/`) |
+| `pnpm run build:css` | Compile CSS only |
+| `pnpm run build:deploy` | Copy `_site/` → `public_html/` only |
+| `pnpm run preview` | Build + serve locally for preview |
+| `pnpm run watch` | Watch mode: auto-rebuild on all file changes |
+
 ### Development
 
 Start the development server with watch mode:
@@ -112,10 +124,11 @@ This:
 npm run build
 ```
 
-This:
-1. Compiles 11ty: `src/` → `_site/`
-2. Compiles Tailwind CSS with minification
-3. Outputs ready-to-deploy site in `_site/`
+This runs the complete build pipeline:
+1. Compiles 11ty: `src/articles/*.md` + templates → `_site/`
+2. Compiles Tailwind CSS with minification → `_site/css/styles.css`
+3. Copies `_site/` → `public_html/` (automatic deploy step)
+4. Result: `public_html/` is ready for server upload
 
 ### Preview Built Site
 
@@ -247,19 +260,41 @@ ErrorDocument 404 /404.html
 
 ## Deployment
 
-### To Production
+### Build and Deploy
 
-1. Run `npm run build`
-2. Copy contents of `_site/` to your web server's `public_html/` directory
-3. Ensure `robots.txt` and `sitemap.xml` are present
-4. Configure `.htaccess` for clean URLs and 404 handling
-
-### Example (cPanel/Apache)
+The `npm run build` command automatically prepares `public_html/` for deployment:
 
 ```bash
+# 1. Build everything (11ty + CSS + copy to public_html)
 npm run build
-scp -r _site/* user@server:/path/to/public_html/
+
+# 2. Upload public_html to server
+scp -r public_html/* user@server:/path/to/public_html/
+
+# Or via cPanel: Upload public_html/* contents to public_html/
 ```
+
+### What Gets Deployed
+
+When you run `npm run build`, these files are prepared in `public_html/`:
+
+```
+public_html/
+├── news/
+│   ├── index.html              (news listing page)
+│   ├── google-datacenter-uy/   (articles)
+│   └── google-datacenter-ecosistema-tech/
+├── css/
+│   └── styles.css              (compiled Tailwind, minified)
+├── images/                      (favicons)
+├── robots.txt
+├── sitemap.xml
+├── manifest.json
+├── .htaccess
+└── [other static files]
+```
+
+**Note:** Only `public_html/` needs to be uploaded. The `_site/` folder is a build intermediate and not needed on the server.
 
 ---
 
