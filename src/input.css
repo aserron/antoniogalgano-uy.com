@@ -397,6 +397,17 @@ section {
   letter-spacing: 0.1em;
   color: var(--text);
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--border);
 }
 
 /* ABOUT SECTION */

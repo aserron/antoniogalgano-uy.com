@@ -19,6 +19,9 @@
     <meta name="theme-color" content="#07080f">
     <link rel="author" href="/humans.txt">
     <link rel="security" href="/.well-known/security.txt">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/images/favico/favicon_io/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favico/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favico/favicon_io/favicon-16x16.png">
@@ -55,7 +58,7 @@
 <!-- NAVIGATION -->
 <nav class="border-b border-slate-800 sticky top-0 z-50 bg-slate-950/95 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <a href="/" class="text-xl font-bold tracking-tighter hover:text-cyan-400 transition">AGV</a>
+        <a href="/" class="nav-logo">AGV</a>
         <div class="hidden md:flex gap-8">
             <a href="/#sobre" class="text-sm font-medium hover:text-cyan-400 transition">Sobre mí</a>
             <a href="/#servicios" class="text-sm font-medium hover:text-cyan-400 transition">Servicios</a>
@@ -93,148 +96,183 @@
 </script>
 
 <!-- HERO SECTION -->
-<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <div class="inline-block border border-slate-700 rounded-full px-4 py-1 mb-6 text-xs font-mono text-cyan-400">
-                // CONSULTOR_TI / UY_REGIÓN
+<section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow-r"></div>
+    <div class="hero-glow-l"></div>
+    <div class="scan-line"></div>
+    <div class="vertical-label">ANTONIOGALGANO-UY.COM // 2026 // CONSULTORÍA TI & CIBERSEGURIDAD</div>
+
+    <div class="hero-inner">
+        <div class="reveal">
+            <div class="hero-flag">
+                <span>// CONSULTOR_TI</span>
+                <span class="sep">/</span>
+                <span class="loc">UY_REGIÓN</span>
             </div>
-            <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">
-                Antonio<br/>Galgano<br/>Votta
+            <h1 class="hero-name">
+                <span>Antonio</span>
+                <span>Galgano</span>
+                <span>Votta</span>
             </h1>
-            <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+            <div class="hero-role">
+                <span class="prompt">&gt;</span>
                 Consultor TI / Especialista en Ciberseguridad
-            </p>
-            <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+            </div>
+            <p class="hero-desc">
                 Más de 10 años asesorando empresas uruguayas en infraestructura digital, protección de datos y cumplimiento normativo local.
             </p>
-            <div class="flex flex-wrap gap-4 mb-8">
-                <div class="flex items-center gap-2 px-3 py-2 rounded border border-slate-700">
-                    <span class="text-cyan-400 font-mono font-bold">10+</span>
-                    <span class="text-xs text-slate-400">años</span>
-                </div>
-                <div class="flex items-center gap-2 px-3 py-2 rounded border border-slate-700">
-                    <span class="text-cyan-400 font-mono font-bold">UY</span>
-                    <span class="text-xs text-slate-400">base</span>
-                </div>
-                <div class="flex items-center gap-2 px-3 py-2 rounded border border-slate-700">
-                    <span class="text-cyan-400 font-mono font-bold">AGESIC</span>
-                    <span class="text-xs text-slate-400">compliance</span>
-                </div>
+            <div class="hero-btns">
+                <a href="#contacto" class="btn-solid">Solicitar Consultoría</a>
+                <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="btn-ghost">LinkedIn</a>
             </div>
-            <div class="flex gap-4">
-                <a href="#contacto" class="bg-cyan-500 text-slate-950 px-6 py-3 font-semibold rounded hover:bg-cyan-400 transition">
-                    Solicitar Consultoría
-                </a>
-                <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="border border-slate-600 text-slate-300 px-6 py-3 font-semibold rounded hover:border-cyan-400 hover:text-cyan-400 transition">
-                    LinkedIn
-                </a>
+            <div class="hero-stats">
+                <div class="reveal reveal-delay-1">
+                    <div class="stat-val">10<span style="font-size: 1.25rem;">+</span></div>
+                    <div class="stat-key">Años de experiencia</div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="stat-val">UY</div>
+                    <div class="stat-key">Base</div>
+                </div>
+                <div class="reveal reveal-delay-3">
+                    <div class="stat-val">AGESIC</div>
+                    <div class="stat-key">Compliance</div>
+                </div>
             </div>
         </div>
-        <div class="hidden md:block relative h-96 bg-gradient-to-br from-cyan-400/10 to-blue-600/10 rounded-lg border border-slate-700"></div>
+
+        <div class="hero-vis reveal">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>
+                        @keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+                        @keyframes pulse { 0%, 100% { r: 3px; opacity: 0.8; } 50% { r: 5px; opacity: 0.3; } }
+                        .orbit-ring { animation: orbit 20s linear infinite; transform-origin: 200px 200px; }
+                        .pulse-node { animation: pulse 2s ease-in-out infinite; }
+                    </style>
+                </defs>
+                <circle cx="200" cy="200" r="150" fill="none" stroke="var(--cyan)" stroke-width="1" opacity="0.15"/>
+                <circle cx="200" cy="200" r="100" fill="none" stroke="var(--border-cyan)" stroke-width="1" opacity="0.1"/>
+                <g class="orbit-ring">
+                    <circle cx="350" cy="200" r="4" fill="var(--cyan)" opacity="0.7"/>
+                    <circle cx="200" cy="50" r="4" fill="var(--amber)" opacity="0.7"/>
+                    <circle cx="50" cy="200" r="4" fill="var(--emerald)" opacity="0.7"/>
+                </g>
+                <circle cx="200" cy="200" r="6" fill="var(--cyan)"/>
+                <circle cx="200" cy="200" r="10" fill="none" stroke="var(--cyan)" stroke-width="1" opacity="0.5"/>
+                <circle cx="200" cy="200" r="15" fill="none" stroke="var(--cyan)" stroke-width="1" opacity="0.3"/>
+                <circle cx="280" cy="160" r="3" fill="var(--text)" opacity="0.6" class="pulse-node"/>
+                <circle cx="320" cy="240" r="3" fill="var(--text)" opacity="0.6" class="pulse-node"/>
+                <circle cx="150" cy="120" r="3" fill="var(--text)" opacity="0.6" class="pulse-node"/>
+                <circle cx="250" cy="280" r="3" fill="var(--text)" opacity="0.6" class="pulse-node"/>
+                <circle cx="100" cy="260" r="3" fill="var(--text)" opacity="0.6" class="pulse-node"/>
+                <line x1="200" y1="200" x2="280" y2="160" stroke="var(--border-cyan)" stroke-width="0.5" opacity="0.3"/>
+                <line x1="200" y1="200" x2="320" y2="240" stroke="var(--border-cyan)" stroke-width="0.5" opacity="0.3"/>
+                <line x1="200" y1="200" x2="150" y2="120" stroke="var(--border-cyan)" stroke-width="0.5" opacity="0.3"/>
+                <line x1="200" y1="200" x2="250" y2="280" stroke="var(--border-cyan)" stroke-width="0.5" opacity="0.3"/>
+                <line x1="200" y1="200" x2="100" y2="260" stroke="var(--border-cyan)" stroke-width="0.5" opacity="0.3"/>
+            </svg>
+        </div>
     </div>
 </section>
 
 <!-- SOBRE MÍ SECTION -->
-<section id="sobre" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800">
-    <h2 class="text-4xl font-bold mb-12">Sobre mí</h2>
-    <div class="grid md:grid-cols-2 gap-12">
-        <div>
-            <p class="text-lg text-slate-300 mb-6 leading-relaxed">
-                Soy un consultor de tecnología de la información con más de 10 años de experiencia asesorando a empresas uruguayas en infraestructura digital, ciberseguridad y cumplimiento normativo.
-            </p>
-            <p class="text-lg text-slate-300 mb-6 leading-relaxed">
-                Con base en Montevideo, he trabajado con organizaciones de diversos sectores: financiero, administración pública, tecnología y servicios. Mi enfoque combina auditoría técnica rigurosa con orientación estratégica para el crecimiento empresarial.
-            </p>
-            <p class="text-lg text-slate-300 leading-relaxed">
-                Especialista en marcos normativos uruguayos e iberoamericanos, particularmente Ley 18.331 de Protección de Datos Personales y lineamientos AGESIC.
-            </p>
+<section id="sobre" class="about-section">
+    <div>
+        <div class="section-eyebrow">Perfil Profesional</div>
+        <h2 class="about-heading">Sobre mí</h2>
+        <p class="reveal reveal-delay-1">
+            Soy un consultor de tecnología de la información con más de 10 años de experiencia asesorando a empresas uruguayas en infraestructura digital, ciberseguridad y cumplimiento normativo.
+        </p>
+        <p class="reveal reveal-delay-2">
+            Con base en Montevideo, he trabajado con organizaciones de diversos sectores: financiero, administración pública, tecnología y servicios. Mi enfoque combina auditoría técnica rigurosa con orientación estratégica para el crecimiento empresarial.
+        </p>
+        <p class="reveal reveal-delay-3">
+            Especialista en marcos normativos uruguayos e iberoamericanos, particularmente Ley 18.331 de Protección de Datos Personales y lineamientos AGESIC.
+        </p>
+    </div>
+    <div class="stats-stack">
+        <div class="stat-card c1 reveal reveal-delay-1">
+            <div class="stat-card-value">10+</div>
+            <div class="stat-card-label">Años de experiencia</div>
         </div>
-        <div class="grid grid-cols-2 gap-6">
-            <div class="p-6 bg-slate-900 rounded-lg border border-slate-700">
-                <div class="text-3xl font-bold text-cyan-400 mb-2">10+</div>
-                <p class="text-sm text-slate-400">Años de experiencia</p>
-            </div>
-            <div class="p-6 bg-slate-900 rounded-lg border border-slate-700">
-                <div class="text-3xl font-bold text-cyan-400 mb-2">50+</div>
-                <p class="text-sm text-slate-400">Clientes en Uruguay</p>
-            </div>
-            <div class="p-6 bg-slate-900 rounded-lg border border-slate-700">
-                <div class="text-3xl font-bold text-cyan-400 mb-2">∞</div>
-                <p class="text-sm text-slate-400">Disponibilidad</p>
-            </div>
-            <div class="p-6 bg-slate-900 rounded-lg border border-slate-700">
-                <div class="text-3xl font-bold text-cyan-400 mb-2">100%</div>
-                <p class="text-sm text-slate-400">Confidencialidad</p>
-            </div>
+        <div class="stat-card c2 reveal reveal-delay-2">
+            <div class="stat-card-value">50+</div>
+            <div class="stat-card-label">Clientes en Uruguay</div>
+        </div>
+        <div class="stat-card c3 reveal reveal-delay-3">
+            <div class="stat-card-value">∞</div>
+            <div class="stat-card-label">Disponibilidad</div>
         </div>
     </div>
 </section>
 
 <!-- SERVICIOS SECTION -->
-<section id="servicios" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800">
-    <h2 class="text-4xl font-bold mb-12">Servicios</h2>
-    <div class="grid md:grid-cols-3 gap-8">
+<section id="servicios" class="services-section">
+    <div class="section-eyebrow">Áreas de Consultoría</div>
+    <h2 class="services-heading">Servicios</h2>
+    <div class="services-grid">
         <!-- Consultoría TI -->
-        <div class="p-8 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-lg border border-cyan-500/20 hover:border-cyan-500/50 transition">
-            <h3 class="text-xl font-bold mb-4 text-cyan-400">Consultoría TI</h3>
-            <p class="text-slate-300 mb-6 leading-relaxed">
-                Transformación digital y modernización de infraestructura para empresas uruguayas. Desde diagnóstico inicial hasta implementación y seguimiento.
+        <div class="svc-card c1 reveal reveal-delay-1">
+            <div class="svc-num">// 01</div>
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <h3 class="svc-title">Consultoría TI</h3>
+            <p class="svc-desc">
+                Transformación digital y modernización de infraestructura. Auditoría técnica, planificación, migración a cloud, automatización de procesos.
             </p>
-            <ul class="space-y-2 text-sm text-slate-400">
-                <li>✓ Auditoría de infraestructura</li>
-                <li>✓ Planificación tecnológica</li>
-                <li>✓ Migración a cloud</li>
-                <li>✓ Automatización de procesos</li>
-            </ul>
         </div>
 
         <!-- Ciberseguridad -->
-        <div class="p-8 bg-gradient-to-br from-amber-500/10 to-transparent rounded-lg border border-amber-500/20 hover:border-amber-500/50 transition">
-            <h3 class="text-xl font-bold mb-4 text-amber-400">Ciberseguridad</h3>
-            <p class="text-slate-300 mb-6 leading-relaxed">
-                Protección integral de datos y sistemas. Cumplimiento de Ley 18.331 y lineamientos AGESIC para la administración pública.
+        <div class="svc-card c2 reveal reveal-delay-2">
+            <div class="svc-num">// 02</div>
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-2-8 2v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <h3 class="svc-title">Ciberseguridad</h3>
+            <p class="svc-desc">
+                Protección integral de datos y sistemas. Auditoría de seguridad, cumplimiento normativo (Ley 18.331, AGESIC), gestión de riesgos, respuesta a incidentes.
             </p>
-            <ul class="space-y-2 text-sm text-slate-400">
-                <li>✓ Auditoría de seguridad</li>
-                <li>✓ Cumplimiento normativo</li>
-                <li>✓ Gestión de riesgos</li>
-                <li>✓ Respuesta a incidentes</li>
-            </ul>
         </div>
 
         <!-- Automatización -->
-        <div class="p-8 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-lg border border-emerald-500/20 hover:border-emerald-500/50 transition">
-            <h3 class="text-xl font-bold mb-4 text-emerald-400">Automatización</h3>
-            <p class="text-slate-300 mb-6 leading-relaxed">
-                Optimización de procesos y sistemas empresariales. Reducción de costos operativos y mejora de eficiencia mediante automatización inteligente.
+        <div class="svc-card c3 reveal reveal-delay-3">
+            <div class="svc-num">// 03</div>
+            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 3 21 3 21 8"></polyline>
+                <polyline points="4 20 9 20 9 15"></polyline>
+                <line x1="21" y1="3" x2="14" y2="10"></line>
+                <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+            <h3 class="svc-title">Automatización</h3>
+            <p class="svc-desc">
+                Optimización de procesos empresariales. Automatización de workflows, DevOps & CI/CD, optimización de bases de datos, monitoreo y alertas.
             </p>
-            <ul class="space-y-2 text-sm text-slate-400">
-                <li>✓ Automatización de workflows</li>
-                <li>✓ DevOps & CI/CD</li>
-                <li>✓ Optimización de bases de datos</li>
-                <li>✓ Monitoreo y alertas</li>
-            </ul>
         </div>
     </div>
 </section>
 
 <!-- MARCO NORMATIVO URUGUAY SECTION -->
-<section id="marco" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800">
-    <h2 class="text-4xl font-bold mb-12">Marco Normativo Uruguay</h2>
+<section id="marco">
+    <div class="section-eyebrow">Regulación Local</div>
+    <h2 class="services-heading">Marco Normativo Uruguay</h2>
     <div class="grid md:grid-cols-2 gap-12">
         <div>
             <h3 class="text-2xl font-bold mb-6 text-cyan-400">Regulación Local</h3>
             <div class="space-y-4">
-                <div class="p-4 bg-slate-900 rounded border border-slate-700">
+                <div class="p-4 bg-slate-900 rounded border border-slate-700 reveal reveal-delay-1">
                     <p class="font-semibold text-slate-100">Ley 18.331 — Protección de Datos Personales</p>
                     <p class="text-sm text-slate-400 mt-1">Marco fundamental para el manejo de datos personales en Uruguay</p>
                 </div>
-                <div class="p-4 bg-slate-900 rounded border border-slate-700">
+                <div class="p-4 bg-slate-900 rounded border border-slate-700 reveal reveal-delay-2">
                     <p class="font-semibold text-slate-100">AGESIC — Agencia de Gobierno Electrónico</p>
                     <p class="text-sm text-slate-400 mt-1">Seguridad informática y estándares para administración pública</p>
                 </div>
-                <div class="p-4 bg-slate-900 rounded border border-slate-700">
+                <div class="p-4 bg-slate-900 rounded border border-slate-700 reveal reveal-delay-3">
                     <p class="font-semibold text-slate-100">Marco de Ciberseguridad Nacional</p>
                     <p class="text-sm text-slate-400 mt-1">Directivas y mejores prácticas para infraestructura crítica</p>
                 </div>
@@ -243,15 +281,15 @@
         <div>
             <h3 class="text-2xl font-bold mb-6 text-emerald-400">Sectores Atendidos</h3>
             <div class="space-y-4">
-                <div class="p-4 bg-slate-900 rounded border border-slate-700">
+                <div class="p-4 bg-slate-900 rounded border border-slate-700 reveal reveal-delay-1">
                     <p class="font-semibold text-slate-100">Sector Financiero</p>
                     <p class="text-sm text-slate-400 mt-1">Compliance regulatorio y seguridad de transacciones</p>
                 </div>
-                <div class="p-4 bg-slate-900 rounded border border-slate-700">
+                <div class="p-4 bg-slate-900 rounded border border-slate-700 reveal reveal-delay-2">
                     <p class="font-semibold text-slate-100">Administración Pública</p>
                     <p class="text-sm text-slate-400 mt-1">Cumplimiento AGESIC y gobierno electrónico</p>
                 </div>
-                <div class="p-4 bg-slate-900 rounded border border-slate-700">
+                <div class="p-4 bg-slate-900 rounded border border-slate-700 reveal reveal-delay-3">
                     <p class="font-semibold text-slate-100">PyMEs Tecnológicas</p>
                     <p class="text-sm text-slate-400 mt-1">Escalabilidad y crecimiento seguro en la región</p>
                 </div>
@@ -262,46 +300,79 @@
 
 <!-- NOTICIAS SECTION -->
 
-<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800">
-    <div class="flex justify-between items-center mb-12">
-        <h2 class="text-4xl font-bold">Últimas Noticias</h2>
+<section class="articles-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+        <div>
+            <div class="section-eyebrow">Análisis & Perspectivas</div>
+            <h2 class="articles-heading">Últimas Noticias</h2>
+        </div>
         <a href="/news/" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">Ver todas →</a>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
-        <a href="/news/google-datacenter-ecosistema-tech/" class="group p-6 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition">
-            <p class="text-xs text-slate-400 font-mono mb-2">15 mayo 2026</p>
-            <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition">Google Data Center: El Catalizador que Redefine el Ecosistema Tech Uruguayo</h3>
-            <p class="text-slate-400 mb-4 line-clamp-2">Análisis del impacto transformador del data center de Google en Canelones. Cómo la inversión de 850M USD redefine la ingeniería de software, infraestructura, talento e innovación en Uruguay.</p>
-            <p class="text-xs text-slate-500">10 min de lectura</p>
+    <div class="articles-grid">
+        <a href="/news/google-datacenter-ecosistema-tech/" class="article-card reveal reveal-delay-1">
+            <div class="article-card-inner">
+                <p class="article-date">15 mayo 2026</p>
+                <h3 class="article-title">Google Data Center: El Catalizador que Redefine el Ecosistema Tech Uruguayo</h3>
+                <p class="article-excerpt">Análisis del impacto transformador del data center de Google en Canelones. Cómo la inversión de 850M USD redefine la ingeniería de software, infraestructura, talento e innovación en Uruguay.</p>
+                <div class="article-meta">
+                    <span class="read-time">10 min</span>
+                </div>
+            </div>
         </a>
-        <a href="/news/google-datacenter-uy/" class="group p-6 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition">
-            <p class="text-xs text-slate-400 font-mono mb-2">15 mayo 2026</p>
-            <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition">Google Anuncia Nuevo Data Center en Uruguay — Implicaciones para la Infraestructura Digital Local</h3>
-            <p class="text-slate-400 mb-4 line-clamp-2">Análisis del nuevo Google Data Center en Uruguay. Impacto en infraestructura digital, cloud computing, soberanía de datos y oportunidades para empresas locales.</p>
-            <p class="text-xs text-slate-500">8 min de lectura</p>
+        <a href="/news/google-datacenter-uy/" class="article-card reveal reveal-delay-2">
+            <div class="article-card-inner">
+                <p class="article-date">15 mayo 2026</p>
+                <h3 class="article-title">Google Anuncia Nuevo Data Center en Uruguay — Implicaciones para la Infraestructura Digital Local</h3>
+                <p class="article-excerpt">Análisis del nuevo Google Data Center en Uruguay. Impacto en infraestructura digital, cloud computing, soberanía de datos y oportunidades para empresas locales.</p>
+                <div class="article-meta">
+                    <span class="read-time">8 min</span>
+                </div>
+            </div>
         </a>
     </div>
 </section>
 
 
 <!-- CONTACTO SECTION -->
-<section id="contacto" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800">
-    <h2 class="text-4xl font-bold mb-12 text-center">Contacto</h2>
-    <div class="max-w-2xl mx-auto text-center">
-        <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-            Disponible para consultoría técnica en Uruguay y la región.
+<section id="contacto" class="contact-section">
+    <div style="grid-column: 1 / -1;">
+        <div class="section-eyebrow">Disponibilidad</div>
+        <h2 class="contact-heading" style="margin-bottom: 2rem;">Contacto</h2>
+        <p class="contact-sub" style="grid-column: 1 / -1;">
+            Disponible para consultoría técnica especializada en infraestructura digital, ciberseguridad y cumplimiento normativo en Uruguay y la región.
         </p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="bg-cyan-500 text-slate-950 px-8 py-4 font-semibold rounded hover:bg-cyan-400 transition flex items-center justify-center gap-2">
-                LinkedIn
-            </a>
-            <a href="https://x.com/AntonioGalganoV" target="_blank" class="bg-slate-800 text-slate-100 px-8 py-4 font-semibold rounded hover:bg-slate-700 transition flex items-center justify-center gap-2">
-                X (Twitter)
-            </a>
-            <a href="mailto:aserron.dev@gmail.com" class="border border-slate-600 text-slate-300 px-8 py-4 font-semibold rounded hover:border-cyan-400 hover:text-cyan-400 transition">
-                Email
-            </a>
-        </div>
+    </div>
+    <div class="contact-links reveal reveal-delay-1">
+        <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="contact-link">
+            <svg class="cl-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.49v8.5h2.5v-4.34c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.34h2.49M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.5H5.5v8.5h2.77z"></path>
+            </svg>
+            <div>
+                <div class="cl-name">LinkedIn</div>
+                <div class="cl-handle">@antonio-galgano-votta</div>
+            </div>
+            <div class="cl-arrow">→</div>
+        </a>
+        <a href="https://x.com/AntonioGalganoV" target="_blank" class="contact-link">
+            <svg class="cl-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.207-6.807-5.957 6.807H2.566l7.752-8.835L.319 2.25h6.888l4.721 6.237 5.386-6.237zM17.534 20.05h1.885L6.975 3.975H5.016l12.518 16.075z"></path>
+            </svg>
+            <div>
+                <div class="cl-name">X (Twitter)</div>
+                <div class="cl-handle">@AntonioGalganoV</div>
+            </div>
+            <div class="cl-arrow">→</div>
+        </a>
+        <a href="mailto:aserron.dev@gmail.com" class="contact-link">
+            <svg class="cl-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <div>
+                <div class="cl-name">Email</div>
+                <div class="cl-handle">aserron.dev@gmail.com</div>
+            </div>
+            <div class="cl-arrow">→</div>
+        </a>
     </div>
 </section>
 

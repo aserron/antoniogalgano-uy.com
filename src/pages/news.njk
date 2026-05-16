@@ -6,44 +6,29 @@ keywords: "Noticias, Artículos, Ciberseguridad, IT, Uruguay, AGESIC"
 permalink: /news/index.html
 ---
 
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<main style="max-width: 1200px; margin: 0 auto;">
     <!-- HEADER -->
-    <header class="py-16 sm:py-20 border-b border-slate-800">
-        <h1 class="text-5xl sm:text-6xl font-bold mb-4 tracking-tight">Noticias y Artículos</h1>
-        <p class="text-xl text-slate-300 max-w-2xl">Análisis y perspectivas sobre ciberseguridad, infraestructura digital y cumplimiento normativo en Uruguay</p>
+    <header style="padding: 4rem 2rem; border-bottom: 1px solid var(--border);">
+        <div class="section-eyebrow">Noticias y Análisis</div>
+        <h1 style="font-size: 3rem; font-family: 'IBM Plex Mono', monospace; color: var(--text-bright); margin-bottom: 1rem; line-height: 1.2;">Noticias y Artículos</h1>
+        <p style="font-size: 1.125rem; color: var(--text); max-width: 40rem; line-height: 1.7;">Análisis y perspectivas sobre ciberseguridad, infraestructura digital y cumplimiento normativo en Uruguay</p>
     </header>
 
     <!-- ARTICLES GRID -->
     {% if collections.articles.length > 0 %}
-    <section class="py-16 sm:py-20" aria-label="Listado de artículos">
-        <div class="grid md:grid-cols-2 gap-8">
+    <section style="padding: 4rem 2rem;" aria-label="Listado de artículos">
+        <div class="articles-grid">
             {% for article in collections.articles %}
-            <article class="group p-8 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition flex flex-col">
-                <header class="mb-4">
-                    <h2 class="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition">
-                        <a href="/news/{{ article.data.slug }}/">
-                            {{ article.data.title }}
-                        </a>
-                    </h2>
-                </header>
-
-                <div class="flex flex-wrap gap-4 mb-4 text-xs text-slate-400">
-                    <time class="font-mono" datetime="{{ article.data.published | isoDate }}">
-                        {{ article.data.published | readableDate }}
-                    </time>
-                    <span>{{ article.data.read_time_minutes }} min lectura</span>
+            <a href="/news/{{ article.data.slug }}/" class="article-card reveal {% if loop.index % 3 == 1 %}reveal-delay-1{% elif loop.index % 3 == 2 %}reveal-delay-2{% else %}reveal-delay-3{% endif %}">
+                <div class="article-card-inner">
+                    <p class="article-date">{{ article.data.published | readableDate('es') }}</p>
+                    <h2 class="article-title">{{ article.data.title }}</h2>
+                    <p class="article-excerpt">{{ article.data.description }}</p>
+                    <div class="article-meta">
+                        <span class="read-time">{{ article.data.read_time_minutes }} min lectura</span>
+                    </div>
                 </div>
-
-                <p class="text-slate-300 mb-6 flex-grow leading-relaxed">
-                    {{ article.data.description }}
-                </p>
-
-                <footer>
-                    <a href="/news/{{ article.data.slug }}/" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">
-                        Leer artículo →
-                    </a>
-                </footer>
-            </article>
+            </a>
             {% endfor %}
         </div>
     </section>
@@ -55,12 +40,12 @@ permalink: /news/index.html
     {% endif %}
 
     <!-- CTA SECTION -->
-    <section class="py-16 sm:py-20 border-t border-slate-800 text-center">
-        <h2 class="text-3xl font-bold mb-4">¿Interesado en Consultoría Técnica?</h2>
-        <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+    <section style="padding: 4rem 2rem; border-top: 1px solid var(--border); text-align: center;">
+        <h2 style="font-size: 2.25rem; color: var(--text-bright); margin-bottom: 1rem;">¿Interesado en Consultoría Técnica?</h2>
+        <p style="font-size: 1.125rem; color: var(--text); max-width: 40rem; margin: 2rem auto; line-height: 1.7;">
             Disponible para asesoría especializada en ciberseguridad, infraestructura digital y cumplimiento normativo.
         </p>
-        <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="bg-cyan-500 text-slate-950 px-8 py-4 font-semibold rounded hover:bg-cyan-400 transition inline-block">
+        <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="btn-solid" style="display: inline-block;">
             Solicitar Consultoría
         </a>
     </section>
