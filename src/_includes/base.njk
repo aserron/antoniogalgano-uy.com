@@ -74,7 +74,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Antonio Galgano Votta",
+        "name": "{{ site.author.name }}",
         "alternateName": "{{ site.author.alternateName }}",
         "url": "https://antoniogalgano-uy.com/",
         "image": "https://antoniogalgano-uy.com/images/favico/favicon_io/apple-touch-icon.png",
@@ -92,7 +92,31 @@
         ]
     }
     </script>
-    {% block schema %}{% endblock %}
+    {% if page.url == '/news/' %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ site.url }}/" },
+            { "@type": "ListItem", "position": 2, "name": "Noticias", "item": "{{ site.url }}/news/" }
+        ]
+    }
+    </script>
+    {% endif %}
+    {% if published %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ site.url }}/" },
+            { "@type": "ListItem", "position": 2, "name": "Noticias", "item": "{{ site.url }}/news/" },
+            { "@type": "ListItem", "position": 3, "name": "{{ title }}", "item": "{{ site.url }}{{ page.url }}" }
+        ]
+    }
+    </script>
+    {% endif %}
 </head>
 <body class="bg-slate-950 text-slate-100">
 
