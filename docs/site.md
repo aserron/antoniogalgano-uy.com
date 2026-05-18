@@ -4,6 +4,27 @@
 
 ---
 
+## Site Role
+
+**Uruguay IT & Cybersecurity News**
+
+This site is a news and analysis publication covering IT infrastructure and cybersecurity topics specifically for the Uruguayan market. It publishes original articles on technology trends, local regulation (AGESIC, Ley 18331), and industry developments affecting Uruguayan businesses and professionals.
+
+---
+
+## Subject
+
+| | |
+|---|---|
+| Full name | **Antonio Galgano Votta** |
+| Partial name | **Antonio Galgano** |
+| Role | Consultor TI / Especialista en Ciberseguridad |
+| Location | Montevideo, Uruguay |
+
+Both name forms appear in the site's content — the full name in headings and structured data, the partial name in body copy — to capture search variations targeting either form.
+
+---
+
 ## Site Properties
 
 | Property | Value |
@@ -205,6 +226,40 @@ PWA manifest. `name`: "Antonio Galgano Votta — Consultor TI & Ciberseguridad e
 - Additional articles (target: 5+ for authority)
 - Author bio section on article pages
 - RSS feed (`/feed.xml`)
+
+---
+
+## Tech Stack & Templates
+
+### Static site generator
+This site is built with **Eleventy (11ty) v3.1.5** using **Nunjucks** as the template engine and **Tailwind CSS v3.4** for styling.
+
+### Build
+```bash
+pnpm run build   # generates _site/, compiles CSS, copies to public_html/
+pnpm run dev     # dev server on http://localhost:8080 with auto-rebuild
+```
+
+### Source structure
+
+| Path | Purpose |
+|---|---|
+| `src/pages/index.njk` | Homepage template |
+| `src/pages/news.njk` | News listing template |
+| `src/_includes/base.njk` | Master layout — `<head>`, nav, footer, all shared meta |
+| `src/_includes/article.njk` | Article page layout |
+| `src/_data/site.json` | Global site data (title, description, nav, social, network links) |
+| `src/articles/*.md` | Article content — YAML frontmatter + Markdown body |
+| `src/sitemap.njk` | Dynamic sitemap generator |
+| `src/input.css` | Tailwind CSS source |
+| `public/` | Static passthrough files (robots.txt, manifest.json, .htaccess, 404.html) |
+
+### ⚠ Edit templates, not `public_html/`
+
+`public_html/` is the **deploy output** — it is overwritten on every build. Content and layout changes must be made in `src/`. The only exception is emergency hotfixes that need to be live before the next build, in which case both `src/` and `public_html/` must be kept in sync manually.
+
+### Key data file: `src/_data/site.json`
+Site-wide values (title, description, author, nav labels, social links, network sites) live here. Changes propagate to all pages on rebuild — do not hardcode these values in templates.
 
 ---
 
