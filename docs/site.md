@@ -139,7 +139,7 @@ All 7 sites link to each other via a shared footer "Sitios Relacionados" section
 | Page | Types declared |
 |---|---|
 | `/` | `WebSite`, `Person` |
-| `/news/` | `WebSite` |
+| `/news/` | `WebSite`, `Person`, `BreadcrumbList` |
 | `/news/google-datacenter-uy/` | `Article`, `BreadcrumbList` |
 | `/news/google-datacenter-ecosistema-tech/` | `Article`, `BreadcrumbList` |
 
