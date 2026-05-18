@@ -52,7 +52,6 @@ export default function(eleventyConfig) {
 
   // Copy static assets (infrastructure files to root, not nested)
   eleventyConfig.addPassthroughCopy({ 'public/robots.txt': 'robots.txt' });
-  eleventyConfig.addPassthroughCopy({ 'public/sitemap.xml': 'sitemap.xml' });
   eleventyConfig.addPassthroughCopy({ 'public/manifest.json': 'manifest.json' });
   eleventyConfig.addPassthroughCopy({ 'public/.htaccess': '.htaccess' });
   eleventyConfig.addPassthroughCopy({ 'public/404.html': '404.html' });
