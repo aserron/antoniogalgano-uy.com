@@ -11,14 +11,13 @@
     <meta name="author" content="Antonio Galgano Votta">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://antoniogalgano-uy.com/news/">
-    <link rel="alternate" hreflang="es-UY" href="https://antoniogalgano-uy.com/news/">
-    <link rel="alternate" hreflang="es"    href="https://antoniogalgano-uy.com/news/">
-    <link rel="alternate" hreflang="es-419" href="https://antoniogalgano-uy.com/news/">
-    <link rel="alternate" hreflang="x-default" href="https://antoniogalgano.com/">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#07080f">
     <link rel="author" href="/humans.txt">
     <link rel="security" href="/.well-known/security.txt">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/images/favico/favicon_io/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favico/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favico/favicon_io/favicon-16x16.png">
@@ -55,7 +54,7 @@
 <!-- NAVIGATION -->
 <nav class="border-b border-slate-800 sticky top-0 z-50 bg-slate-950/95 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <a href="/" class="text-xl font-bold tracking-tighter hover:text-cyan-400 transition">AGV</a>
+        <a href="/" class="nav-logo">AGV</a>
         <div class="hidden md:flex gap-8">
             <a href="/#sobre" class="text-sm font-medium hover:text-cyan-400 transition">Sobre mí</a>
             <a href="/#servicios" class="text-sm font-medium hover:text-cyan-400 transition">Servicios</a>
@@ -63,77 +62,45 @@
             <a href="/news/" class="text-sm font-medium hover:text-cyan-400 transition text-cyan-400">Noticias</a>
             <a href="/#contacto" class="text-sm font-medium hover:text-cyan-400 transition">Contacto</a>
         </div>
-        <a href="/#contacto" class="bg-cyan-500 text-slate-950 px-4 py-2 text-sm font-semibold rounded hover:bg-cyan-400 transition">Contacto</a>
     </div>
 </nav>
 
 <!-- CONTENT -->
 
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<main style="max-width: 1200px; margin: 0 auto;">
     <!-- HEADER -->
-    <header class="py-16 sm:py-20 border-b border-slate-800">
-        <h1 class="text-5xl sm:text-6xl font-bold mb-4 tracking-tight">Noticias y Artículos</h1>
-        <p class="text-xl text-slate-300 max-w-2xl">Análisis y perspectivas sobre ciberseguridad, infraestructura digital y cumplimiento normativo en Uruguay</p>
+    <header style="padding: 4rem 2rem; border-bottom: 1px solid var(--border);">
+        <div class="section-eyebrow">Noticias y Análisis</div>
+        <h1 style="font-size: 3rem; font-family: 'IBM Plex Mono', monospace; color: var(--text-bright); margin-bottom: 1rem; line-height: 1.2;">Noticias y Artículos</h1>
+        <p style="font-size: 1.125rem; color: var(--text); max-width: 40rem; line-height: 1.7;">Análisis y perspectivas sobre ciberseguridad, infraestructura digital y cumplimiento normativo en Uruguay</p>
     </header>
 
     <!-- ARTICLES GRID -->
     
-    <section class="py-16 sm:py-20" aria-label="Listado de artículos">
-        <div class="grid md:grid-cols-2 gap-8">
+    <section style="padding: 4rem 2rem;" aria-label="Listado de artículos">
+        <div class="articles-grid">
             
-            <article class="group p-8 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition flex flex-col">
-                <header class="mb-4">
-                    <h2 class="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition">
-                        <a href="/news/google-datacenter-ecosistema-tech/">
-                            Google Data Center: El Catalizador que Redefine el Ecosistema Tech Uruguayo
-                        </a>
-                    </h2>
-                </header>
-
-                <div class="flex flex-wrap gap-4 mb-4 text-xs text-slate-400">
-                    <time class="font-mono" datetime="2026-05-16">
-                        15 mayo 2026
-                    </time>
-                    <span>10 min lectura</span>
+            <a href="/news/google-datacenter-ecosistema-tech/" class="article-card reveal reveal-delay-1">
+                <div class="article-card-inner">
+                    <p class="article-date">15 mayo 2026</p>
+                    <h2 class="article-title">Google Data Center: El Catalizador que Redefine el Ecosistema Tech Uruguayo</h2>
+                    <p class="article-excerpt">Análisis del impacto transformador del data center de Google en Canelones. Cómo la inversión de 850M USD redefine la ingeniería de software, infraestructura, talento e innovación en Uruguay.</p>
+                    <div class="article-meta">
+                        <span class="read-time">10 min lectura</span>
+                    </div>
                 </div>
-
-                <p class="text-slate-300 mb-6 flex-grow leading-relaxed">
-                    Análisis del impacto transformador del data center de Google en Canelones. Cómo la inversión de 850M USD redefine la ingeniería de software, infraestructura, talento e innovación en Uruguay.
-                </p>
-
-                <footer>
-                    <a href="/news/google-datacenter-ecosistema-tech/" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">
-                        Leer artículo →
-                    </a>
-                </footer>
-            </article>
+            </a>
             
-            <article class="group p-8 bg-slate-900 rounded-lg border border-slate-700 hover:border-cyan-400 transition flex flex-col">
-                <header class="mb-4">
-                    <h2 class="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition">
-                        <a href="/news/google-datacenter-uy/">
-                            Google Anuncia Nuevo Data Center en Uruguay — Implicaciones para la Infraestructura Digital Local
-                        </a>
-                    </h2>
-                </header>
-
-                <div class="flex flex-wrap gap-4 mb-4 text-xs text-slate-400">
-                    <time class="font-mono" datetime="2026-05-16">
-                        15 mayo 2026
-                    </time>
-                    <span>8 min lectura</span>
+            <a href="/news/google-datacenter-uy/" class="article-card reveal reveal-delay-2">
+                <div class="article-card-inner">
+                    <p class="article-date">15 mayo 2026</p>
+                    <h2 class="article-title">Google Anuncia Nuevo Data Center en Uruguay — Implicaciones para la Infraestructura Digital Local</h2>
+                    <p class="article-excerpt">Análisis del nuevo Google Data Center en Uruguay. Impacto en infraestructura digital, cloud computing, soberanía de datos y oportunidades para empresas locales.</p>
+                    <div class="article-meta">
+                        <span class="read-time">8 min lectura</span>
+                    </div>
                 </div>
-
-                <p class="text-slate-300 mb-6 flex-grow leading-relaxed">
-                    Análisis del nuevo Google Data Center en Uruguay. Impacto en infraestructura digital, cloud computing, soberanía de datos y oportunidades para empresas locales.
-                </p>
-
-                <footer>
-                    <a href="/news/google-datacenter-uy/" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">
-                        Leer artículo →
-                    </a>
-                </footer>
-            </article>
+            </a>
             
         </div>
     </section>
@@ -141,12 +108,12 @@
     
 
     <!-- CTA SECTION -->
-    <section class="py-16 sm:py-20 border-t border-slate-800 text-center">
-        <h2 class="text-3xl font-bold mb-4">¿Interesado en Consultoría Técnica?</h2>
-        <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+    <section style="padding: 4rem 2rem; border-top: 1px solid var(--border); text-align: center;">
+        <h2 style="font-size: 2.25rem; color: var(--text-bright); margin-bottom: 1rem;">¿Interesado en Consultoría Técnica?</h2>
+        <p style="font-size: 1.125rem; color: var(--text); max-width: 40rem; margin: 2rem auto; line-height: 1.7;">
             Disponible para asesoría especializada en ciberseguridad, infraestructura digital y cumplimiento normativo.
         </p>
-        <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="bg-cyan-500 text-slate-950 px-8 py-4 font-semibold rounded hover:bg-cyan-400 transition inline-block">
+        <a href="https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/" target="_blank" class="btn-solid" style="display: inline-block;">
             Solicitar Consultoría
         </a>
     </section>
