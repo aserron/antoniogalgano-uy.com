@@ -41,15 +41,17 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "{{ title }}",
-        "description": "{{ description }}",
+        "@type": "NewsArticle",
+        "headline": "{{ title | safe }}",
+        "description": "{{ description | safe }}",
         "image": "{{ site.url }}/images/favico/favicon_io/android-chrome-512x512.png",
         "author": {
             "@type": "Person",
-            "name": "{{ author or site.author.name }}"
+            "name": "{{ author or site.author.name }}",
+            "url": "{{ site.url }}/"
         },
         "datePublished": "{{ published | isoDate }}",
+        "dateModified": "{{ published | isoDate }}",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "{{ site.url }}{{ page.url }}"
@@ -61,11 +63,11 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "{{ site.title }}",
+        "name": "{{ site.title | safe }}",
         "url": "{{ site.url }}",
-        "description": "{{ site.description }}",
+        "description": "{{ site.description | safe }}",
         "inLanguage": "{{ site.language }}",
-        "author": { "@type": "Person", "name": "{{ site.author.name }}" }
+        "author": { "@type": "Person", "name": "{{ site.author.name | safe }}" }
     }
     </script>
     {% endif %}
@@ -75,11 +77,10 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "{{ site.author.name }}",
-        "alternateName": "{{ site.author.alternateName }}",
+        "alternateName": ["Antonio Galgano", "Antonio Galgano Votta"],
         "url": "https://antoniogalgano-uy.com/",
         "image": "https://antoniogalgano-uy.com/images/favico/favicon_io/apple-touch-icon.png",
         "jobTitle": "Consultor de Tecnologías de la Información",
-        "areaServed": ["Uruguay", "América Latina"],
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "UY",

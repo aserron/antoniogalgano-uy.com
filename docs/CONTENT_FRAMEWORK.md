@@ -2,7 +2,8 @@
 
 ## Overview
 
-Articles stored in `docs/articles/` as markdown files. Each file is source of truth for content, metadata, and SEO signals. Static generator (Hugo/11ty/Jekyll) ingests these to produce HTML pages.
+Articles stored in `docs/articles/` as markdown files. Each file is source of truth for content, metadata, and SEO
+signals. Static generator (Hugo/11ty/Jekyll) ingests these to produce HTML pages.
 
 ---
 
@@ -134,37 +135,46 @@ robots: "index, follow"
 ### 1. **Frontmatter Sections**
 
 **CORE METADATA** — Always required
+
 - `title`, `slug`, `excerpt`, `description` — SEO essentials
 - `author`, `published`, `updated`, `language`, `locale` — Authority + language targeting
 
 **CONTENT STRUCTURE** — For static generation + UX
+
 - `word_count`, `read_time_minutes` — User expectations
 - `featured_image`, `featured_image_alt` — OG + article preview
 
 **SEO & TARGETING** — For indexation + categorization
+
 - `keywords` (array) — primary keyword targets
 - `category`, `tags` (array) — taxonomy for navigation + internal linking
 
 **SCHEMA.ORG SIGNALS** — For rich snippets + trust
+
 - `article_type` (BlogPosting | NewsArticle | AnalysisArticle) — controls JSON-LD structure
 - `main_entity`, `entity_type` — disambiguate topic (e.g., "Google Data Center Uruguay" → TechNews)
 
 **HREFLANG & TRANSLATIONS** — For multi-language future
+
 - `language` + `locale` — current version identifier
 - `alternate_versions` — mapping to ES/EN versions (null = not yet created)
 
 **INTERNAL LINKING** — For site architecture + SEO
+
 - `related_articles` (array of slugs) — recommend other posts
 - `internal_links` (array of {url, text}) — strategic anchors within post body
 
 **CTA SECTION** — For engagement + conversion
+
 - `cta_type` (consultation | newsletter | download | booking)
 - `cta_text`, `cta_url` — renders below article content
 
 **SOCIAL & OG OVERRIDES** — For platform-specific previews
+
 - `og_image`, `twitter_card` — article-specific preview images
 
 **TECHNICAL** — For rendering
+
 - `canonical`, `robots` — indexation control
 - `og_type` — always "article" for blog posts
 
@@ -212,12 +222,14 @@ Static generator should auto-produce:
 ### 3. **Archive & Listing Pages**
 
 Auto-generate:
+
 - `/articulos/` — All articles, sorted by date (newest first)
 - `/articulos/categoria/{category}/` — Filtered by category
 - `/articulos/tag/{tag}/` — Filtered by tag
 - `/articulos/archivo/{year}/{month}/` — Date-based archive
 
 Each listing auto-generates:
+
 - Meta: word count, read time, excerpt
 - Pagination: 10 per page
 - Filters: category / tag sidebars
@@ -225,6 +237,7 @@ Each listing auto-generates:
 ### 4. **Search & Discoverability**
 
 Metadata enables:
+
 - **Full-text search** on `title` + `excerpt` + `keywords`
 - **Category filtering** on dashboard
 - **Tag clouds** on archive page
@@ -233,6 +246,7 @@ Metadata enables:
 ### 5. **SEO Automation**
 
 Generator should:
+
 - Create `<script type="application/ld+json">` BlogPosting schema from frontmatter
 - Inject hreflang alternates into `<head>` (using `alternate_versions`)
 - Generate OG meta tags from `og_image`, `title`, `description`
@@ -242,6 +256,7 @@ Generator should:
 ### 6. **Future: Multi-Language Support**
 
 When EN version is needed:
+
 1. Create sibling file: `2026-05-16-01-google-datacenter-uy.en.md`
 2. Update both frontmatters with symmetric hreflang:
    ```yaml
@@ -321,11 +336,13 @@ La inversión de Google representa un cambio significativo en el panorama tecnol
 ## Tools & Stack (Future)
 
 Recommended static generator:
+
 - **Hugo** — Fast, template-driven, excellent for blogs + multi-language
 - **11ty (Eleventy)** — JavaScript-based, flexible, great for custom schemas
 - **Jekyll** — Ruby-based, GitHub Pages integration, simpler learning curve
 
 Markdown extensions:
+
 - **YAML frontmatter** — (already standard)
 - **Markdown table syntax** — for structured data
 - **Footnotes** — for citations

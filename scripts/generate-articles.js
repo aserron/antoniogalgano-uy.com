@@ -1,33 +1,33 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
-import { fileURLToPath } from 'url';
+import {marked} from 'marked';
+import {fileURLToPath} from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const articlesDir = path.join(__dirname, '../docs/articles');
 const outputDir = path.join(__dirname, '../public_html/news');
 
 if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
+    fs.mkdirSync(outputDir, {recursive: true});
 }
 
 const files = fs.readdirSync(articlesDir).filter(f => f.endsWith('.md'));
 
 files.forEach(file => {
-  const filePath = path.join(articlesDir, file);
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { data: frontmatter, content } = matter(fileContent);
+    const filePath = path.join(articlesDir, file);
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const {data: frontmatter, content} = matter(fileContent);
 
-  const slug = frontmatter.slug;
-  const articleDir = path.join(outputDir, slug);
+    const slug = frontmatter.slug;
+    const articleDir = path.join(outputDir, slug);
 
-  if (!fs.existsSync(articleDir)) {
-    fs.mkdirSync(articleDir, { recursive: true });
-  }
+    if (!fs.existsSync(articleDir)) {
+        fs.mkdirSync(articleDir, {recursive: true});
+    }
 
-  const htmlContent = marked(content);
-  const html = `<!DOCTYPE html>
+    const htmlContent = marked(content);
+    const html = `<!DOCTYPE html>
 <html lang="${frontmatter.language || 'es'}">
 <head>
   <meta charset="UTF-8">
@@ -54,8 +54,8 @@ files.forEach(file => {
 </body>
 </html>`;
 
-  fs.writeFileSync(path.join(articleDir, 'index.html'), html);
-  console.log(`Generated: /news/${slug}/`);
+    fs.writeFileSync(path.join(articleDir, 'index.html'), html);
+    console.log(`Generated: /news/${slug}/`);
 });
 
 console.log('✓ Article generation complete');

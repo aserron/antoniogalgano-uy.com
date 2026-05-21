@@ -8,7 +8,9 @@
 
 **Uruguay IT & Cybersecurity News**
 
-This site is a news and analysis publication covering IT infrastructure and cybersecurity topics specifically for the Uruguayan market. It publishes original articles on technology trends, local regulation (AGESIC, Ley 18331), and industry developments affecting Uruguayan businesses and professionals.
+This site is a news and analysis publication covering IT infrastructure and cybersecurity topics specifically for the
+Uruguayan market. It publishes original articles on technology trends, local regulation (AGESIC, Ley 18331), and
+industry developments affecting Uruguayan businesses and professionals.
 
 ---
 
@@ -21,7 +23,15 @@ This site is a news and analysis publication covering IT infrastructure and cybe
 | Role | Consultor TI / Especialista en Ciberseguridad |
 | Location | Montevideo, Uruguay |
 
-Both name forms appear in the site's content — the full name in headings and structured data, the partial name in body copy — to capture search variations targeting either form.
+### RSEO keyword targets
+
+| Priority | Query | Notes |
+|---|---|---|
+| Primary | `antonio galgano vatta` | Common misspelling of Votta → Vatta |
+| Secondary | `antonio galgano` | Partial name, no surname |
+
+The full correct name "Antonio Galgano Votta" appears in headings and structured data. Both misspelling variants are
+covered via `alternateName` in Person schema and meta keywords. Content body uses the correct spelling only.
 
 ---
 
@@ -50,7 +60,9 @@ Both name forms appear in the site's content — the full name in headings and s
 
 ## Campaign Role
 
-This site is one of 7 in a **reverse SEO campaign** targeting the personal brand **"Antonio Galgano Votta"**. The goal is to occupy multiple SERP positions for that name query and suppress unfavorable results.
+This site is one of 7 in a **reverse SEO campaign**. Primary target query: **"antonio galgano vatta"** (misspelling
+variant). Secondary: **"antonio galgano"**. Goal: occupy multiple SERP positions for these queries and suppress
+unfavorable results.
 
 | Site | Domain | Angle |
 |---|---|---|
@@ -63,10 +75,15 @@ This site is one of 7 in a **reverse SEO campaign** targeting the personal brand
 | **7** | **antoniogalgano-uy.com** | **Uruguay focus — this site** |
 
 ### This site's unique angle
-Positions Antonio Galgano Votta as the leading IT consultant and cybersecurity specialist **specifically for the Uruguayan market**. Content emphasizes local regulatory context (AGESIC, Ley 18331), Montevideo-based presence, and Uruguay-specific tech news.
+
+Positions Antonio Galgano Votta as the leading IT consultant and cybersecurity specialist **specifically for the
+Uruguayan market**. Content emphasizes local regulatory context (AGESIC, Ley 18331), Montevideo-based presence, and
+Uruguay-specific tech news.
 
 ### Internal linking
-All 7 sites link to each other via a shared footer "Sitios Relacionados" section. This site receives inlinks from all sibling sites and reciprocates.
+
+All 7 sites link to each other via a shared footer "Sitios Relacionados" section. This site receives inlinks from all
+sibling sites and reciprocates.
 
 ---
 
@@ -77,8 +94,7 @@ All 7 sites link to each other via a shared footer "Sitios Relacionados" section
 | Full name | Antonio Galgano Votta |
 | Alternate name | Antonio Galgano |
 | Job title | Consultor de Tecnologías de la Información |
-| Location | Montevideo, Uruguay (`addressCountry: UY`) |
-| Area served | Uruguay, América Latina |
+| Location | Montevideo, Uruguay (`addressCountry: UY`, `addressLocality: Montevideo`) |
 | Expertise | Consultoría TI, Ciberseguridad, AGESIC, Ley 18331, Protección de Datos, Infraestructura Digital, Automatización |
 
 ---
@@ -165,12 +181,16 @@ All 7 sites link to each other via a shared footer "Sitios Relacionados" section
 | `/news/google-datacenter-ecosistema-tech/` | `Article`, `BreadcrumbList` |
 
 ### Person schema (homepage)
-Declared in-body (after `<nav>`). Key fields: `name`, `alternateName`, `url`, `jobTitle`, `areaServed`, `address` (Montevideo, UY), `knowsAbout`, `sameAs` (LinkedIn + X).
+
+Declared in-body (after `<nav>`). Key fields: `name`, `alternateName`, `url`, `jobTitle`, `address` (
+Montevideo, UY), `knowsAbout`, `sameAs` (LinkedIn + X). Note: `areaServed` is not valid on `schema:Person` — removed.
 
 ### BreadcrumbList schema (articles)
+
 Path: Inicio (`/`) → Noticias (`/news/`) → Article title + URL.
 
 ### Missing / not yet declared
+
 - `Person` on news listing and article pages (only on homepage)
 - `NewsArticle` type (currently using base `Article`)
 - `Organization` (not applicable — personal brand site)
@@ -180,6 +200,7 @@ Path: Inicio (`/`) → Noticias (`/news/`) → Article title + URL.
 ## Infrastructure
 
 ### robots.txt
+
 ```
 User-agent: *
 Allow: /
@@ -196,9 +217,12 @@ Allow: /
 ```
 
 ### sitemap.xml
-`https://antoniogalgano-uy.com/sitemap.xml` — static file, updated manually on content changes. No hreflang entries (removed). Contains 4 URLs: `/`, `/news/`, and both articles.
+
+`https://antoniogalgano-uy.com/sitemap.xml` — static file, updated manually on content changes. No hreflang entries (
+removed). Contains 4 URLs: `/`, `/news/`, and both articles.
 
 ### .htaccess
+
 - HTTPS + non-www enforcement (301)
 - `index.html` → clean URL redirect (301)
 - GZIP compression via `mod_deflate`
@@ -207,13 +231,16 @@ Allow: /
 - 404 → `/404.html`
 
 ### manifest.json
-PWA manifest. `name`: "Antonio Galgano Votta — Consultor TI & Ciberseguridad en Uruguay", `short_name`: "AGV Uruguay", `lang`: "es", `theme_color`: "#07080f".
+
+PWA manifest. `name`: "Antonio Galgano Votta — Consultor TI & Ciberseguridad en Uruguay", `short_name`: "AGV Uruguay",
+`lang`: "es", `theme_color`: "#07080f".
 
 ---
 
 ## Content Status
 
 ### Published pages
+
 | Path | Type | Status |
 |---|---|---|
 | `/` | Homepage | Live |
@@ -223,6 +250,7 @@ PWA manifest. `name`: "Antonio Galgano Votta — Consultor TI & Ciberseguridad e
 | `/404.html` | Error page | Live |
 
 ### Planned / pipeline
+
 - Additional articles (target: 5+ for authority)
 - Author bio section on article pages
 - RSS feed (`/feed.xml`)
@@ -232,9 +260,12 @@ PWA manifest. `name`: "Antonio Galgano Votta — Consultor TI & Ciberseguridad e
 ## Tech Stack & Templates
 
 ### Static site generator
-This site is built with **Eleventy (11ty) v3.1.5** using **Nunjucks** as the template engine and **Tailwind CSS v3.4** for styling.
+
+This site is built with **Eleventy (11ty) v3.1.5** using **Nunjucks** as the template engine and **Tailwind CSS v3.4**
+for styling.
 
 ### Build
+
 ```bash
 pnpm run build   # generates _site/, compiles CSS, copies to public_html/
 pnpm run dev     # dev server on http://localhost:8080 with auto-rebuild
@@ -256,17 +287,28 @@ pnpm run dev     # dev server on http://localhost:8080 with auto-rebuild
 
 ### ⚠ Edit templates, not `public_html/`
 
-`public_html/` is the **deploy output** — it is overwritten on every build. Content and layout changes must be made in `src/`. The only exception is emergency hotfixes that need to be live before the next build, in which case both `src/` and `public_html/` must be kept in sync manually.
+`public_html/` is the **deploy output** — it is overwritten on every build. Content and layout changes must be made in
+`src/`. The only exception is emergency hotfixes that need to be live before the next build, in which case both `src/`
+and `public_html/` must be kept in sync manually.
 
 ### Key data file: `src/_data/site.json`
-Site-wide values (title, description, author, nav labels, social links, network sites) live here. Changes propagate to all pages on rebuild — do not hardcode these values in templates.
+
+Site-wide values (title, description, author, nav labels, social links, network sites) live here. Changes propagate to
+all pages on rebuild — do not hardcode these values in templates.
 
 ---
 
 ## Known Issues
 
-| Issue | File | Notes |
+| Issue | File | Status |
 |---|---|---|
-| Extra `"` in meta description | `news/google-datacenter-ecosistema-tech/index.html:7` | `content="...innovación.""` — trailing double-quote |
-| `&amp;` in JSON-LD `WebSite.name` | `index.html:42`, `news/index.html:42` | Should be bare `&` inside JSON strings |
-| `Person` schema only on homepage | — | Not propagated to news pages |
+| Extra `"` in meta description | `news/google-datacenter-ecosistema-tech/index.html:7` | Open |
+| `&amp;` in JSON-LD `WebSite.name` | `index.html:42`, `news/index.html:42` | Open |
+| `Person` schema only on homepage | — | Open |
+| `areaServed` invalid on `schema:Person` | `base.njk`, `public_html/index.html` | **Fixed 2026-05-21** — removed |
+| Stale hreflang on live server (`es`,`es-UY`,`es-419`,`x-default`→antoniogalgano.com) | Live server | **Fixed in source** — requires redeploy |
+
+### RSEO policy note
+
+Sites in this campaign are **self-contained**. No hreflang cross-linking between sibling sites. Each site is an
+independent SERP result. Cross-site signals are footer anchor links only.

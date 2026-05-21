@@ -12,15 +12,18 @@ language: "es"
 ## Introducción
 
 Start with a compelling introduction that:
+
 - Hooks the reader with a relevant problem or insight
 - Establishes why this topic matters to your audience
 - Previews what they'll learn in the article
 
-Example: "Las PyMEs uruguayas enfrentan crecientes amenazas de ciberseguridad. Este artículo explora estrategias prácticas para proteger infraestructura digital sin inversión masiva."
+Example: "Las PyMEs uruguayas enfrentan crecientes amenazas de ciberseguridad. Este artículo explora estrategias
+prácticas para proteger infraestructura digital sin inversión masiva."
 
 ## Sección Principal
 
 Use H2 for main sections. Organize your article logically:
+
 - One main idea per section
 - Use subheadings (H3) to break up content
 - Keep paragraphs to 2-3 sentences max
@@ -28,11 +31,13 @@ Use H2 for main sections. Organize your article logically:
 ### Subsección
 
 Use H3 for subsections within each main section. This improves:
+
 - Readability on mobile devices
 - SEO (search engines value proper heading hierarchy)
 - Accessibility (screen readers navigate via headings)
 
 **Example structure:**
+
 1. Problem or context
 2. Why it matters
 3. Solution or best practice
@@ -59,7 +64,8 @@ Use H3 for subsections within each main section. This improves:
 
 Define technical terms on first use. Example:
 
-"**AGESIC** (Agencia de Gobierno Electrónico y Sociedad de la Información y del Conocimiento) es el organismo regulador de ciberseguridad en Uruguay."
+"**AGESIC** (Agencia de Gobierno Electrónico y Sociedad de la Información y del Conocimiento) es el organismo regulador
+de ciberseguridad en Uruguay."
 
 ### Otro Concepto
 
@@ -70,6 +76,7 @@ Provide context for **bold keywords** that readers might search for.
 Include real-world scenarios or case studies:
 
 "Una PyME financiera uruguaya implementó MFA (autenticación multifactor) en 3 semanas:
+
 - Semana 1: Evaluación y planificación
 - Semana 2: Implementación técnica
 - Semana 3: Capacitación y rollout
@@ -96,6 +103,7 @@ Include real-world scenarios or case studies:
 End with a clear next step:
 
 **Próximos Pasos:**
+
 1. Evalúe su situación actual (diagnóstico)
 2. Priorice áreas críticas (plan)
 3. Implemente soluciones (acción)
@@ -106,12 +114,14 @@ End with a clear next step:
 ## Conclusión
 
 Summarize:
+
 - Key takeaways (3-5 points)
 - Why it matters for Uruguay specifically
 - Future implications or trends
 - Invitation to reach out
 
-Example: "La ciberseguridad no es un gasto, es una inversión en continuidad empresarial. Uruguay tiene ahora data centers locales y marcos regulatorios claros. Ahora es el momento de actuar."
+Example: "La ciberseguridad no es un gasto, es una inversión en continuidad empresarial. Uruguay tiene ahora data
+centers locales y marcos regulatorios claros. Ahora es el momento de actuar."
 
 ---
 
@@ -132,6 +142,7 @@ Example: "La ciberseguridad no es un gasto, es una inversión en continuidad emp
 - [ ] Read time: Estimación realista (palabras ÷ 200)
 
 **Formato YAML obligatorio:**
+
 ```
 ---
 title: "..."

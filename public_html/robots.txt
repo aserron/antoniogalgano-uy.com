@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /cgi-bin/
-Disallow: /.well-known/
 
 Sitemap: https://antoniogalgano-uy.com/sitemap.xml
 
