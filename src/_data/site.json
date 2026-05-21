@@ -10,10 +10,22 @@
     "email": "contact@antoniogalgano-uy.com"
   },
   "nav": [
-    { "label": "Sobre mí", "anchor": "#sobre" },
-    { "label": "Servicios", "anchor": "#servicios" },
-    { "label": "Marco", "anchor": "#marco" },
-    { "label": "Contacto", "anchor": "#contacto" }
+    {
+      "label": "Sobre mí",
+      "anchor": "#sobre"
+    },
+    {
+      "label": "Servicios",
+      "anchor": "#servicios"
+    },
+    {
+      "label": "Marco",
+      "anchor": "#marco"
+    },
+    {
+      "label": "Contacto",
+      "anchor": "#contacto"
+    }
   ],
   "social": {
     "linkedin": "https://www.linkedin.com/in/antonio-galgano-votta-713b523a7/",
