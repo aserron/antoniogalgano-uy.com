@@ -18,15 +18,17 @@
 ## Completed Features
 
 ### ✅ Core Infrastructure
+
 - **Eleventy (11ty) v3.1.5** configured with Markdown + Nunjucks support
 - **Dynamic article collections** from `src/articles/*.md` with YAML frontmatter
-- **Automatic sitemap generation** from collections.articles with hreflang alternates
+- **Automatic sitemap generation** from collections.articles (no hreflang — self-contained site)
 - **Responsive layout system** with Tailwind CSS v3.4
 - **Build pipeline:** 11ty → CSS compilation → public_html deployment
 
 ### ✅ Pages & Templates
 
 #### Homepage (`/`)
+
 - Full-screen hero section with role, description, stats
 - Sobre mí (About) section with accomplishments cards
 - Servicios (Services) section with 3 service offerings
@@ -37,6 +39,7 @@
 - Footer with network links to all 6 sites
 
 #### News Listing (`/news/`)
+
 - Responsive 2-column grid layout (scales to 1 column on mobile)
 - Article cards with title, date, reading time, description
 - Hover effects (border and text color animations)
@@ -45,6 +48,7 @@
 - CTA section for consultations
 
 #### News Articles (`/news/{slug}/`)
+
 - Breadcrumb navigation (Inicio > Noticias > Title)
 - Full article rendering from Markdown
 - Author, date, and reading time metadata
@@ -54,6 +58,7 @@
 - Back-to-news navigation link
 
 #### Dynamic Sitemap (`/sitemap.xml`)
+
 - Auto-generated from collections.articles
 - Homepage with monthly changefreq
 - /news/ listing with weekly changefreq
@@ -64,28 +69,26 @@
 ### ✅ SEO & Technical
 
 #### Meta Tags & Structure
+
 - Canonical URLs with proper domains
-- Hreflang alternates for language/region targeting:
-  - `es-UY` (primary for Uruguay)
-  - `es` (Spanish)
-  - `es-419` (Latin America)
-  - `x-default` (→ antoniogalgano.com global site)
+- No hreflang — this is a self-contained RSEO site; inter-site linking is footer-only (no hreflang cluster)
 - Open Graph (og:title, og:description, og:image, og:locale="es_UY")
 - Twitter Card (summary_large_image with site & creator)
 - Meta robots (index, follow)
 - Meta author and keywords
 
 #### Structured Data (Schema.org)
+
 - **WebSite type** with basic site info
 - **Person type** with:
-  - Uruguay geolocation (addressCountry: UY, addressLocality: Montevideo)
-  - areaServed: ["Uruguay", "América Latina"]
-  - jobTitle: Consultor de Tecnologías de la Información
-  - knowsAbout: IT, Cybersecurity, AGESIC, Ley 18331, etc.
-  - sameAs: LinkedIn and X/Twitter profiles
+    - Uruguay geolocation (addressCountry: UY, addressLocality: Montevideo)
+    - jobTitle: Consultor de Tecnologías de la Información
+    - knowsAbout: IT, Cybersecurity, AGESIC, Ley 18331, etc.
+    - sameAs: LinkedIn and X/Twitter profiles
 - **Article type** for each article (JSON-LD)
 
 #### Infrastructure Files
+
 - **robots.txt** with Sitemap reference and crawl directives
 - **.htaccess** with HTTPS enforcement, clean URLs, caching headers
 - **manifest.json** for PWA support
@@ -95,17 +98,19 @@
 ### ✅ Content & Articles
 
 #### Current Articles
+
 1. **Google Data Center: El Catalizador que Redefine el Ecosistema Tech Uruguayo**
-   - 10 min read | 2000+ words
-   - Published: 2026-05-16
-   - Focus: Transformative impact on Uruguayan tech ecosystem
+    - 10 min read | 2000+ words
+    - Published: 2026-05-16
+    - Focus: Transformative impact on Uruguayan tech ecosystem
 
 2. **Google Anuncia Nuevo Data Center en Uruguay — Implicaciones para la Infraestructura Digital Local**
-   - 8 min read | 1500+ words
-   - Published: 2026-05-16
-   - Focus: Infrastructure impact and local opportunities
+    - 8 min read | 1500+ words
+    - Published: 2026-05-16
+    - Focus: Infrastructure impact and local opportunities
 
 #### Article Pipeline
+
 - ✅ Template system in place (src/articles/TEMPLATE.md)
 - ✅ YAML frontmatter parsing (gray-matter)
 - ✅ Auto-collection sorting by published date (descending)
@@ -114,6 +119,7 @@
 - ✅ Comprehensive article guide (docs/ARTICLE_GUIDE.md)
 
 ### ✅ Design & UX
+
 - **Color Scheme:** Slate 950 background, Cyan 500 accents, Amber/Emerald service cards
 - **Typography:** IBM Plex Sans + Mono fonts (Google Fonts)
 - **Spacing:** Tailwind's default scale (4px base unit)
@@ -124,6 +130,7 @@
 ### ✅ Build & Deployment
 
 #### Build Pipeline
+
 ```bash
 pnpm run build
 # → npm run build:11ty (11ty generates _site/)
@@ -132,12 +139,14 @@ pnpm run build
 ```
 
 #### Directory Structure
+
 - **src/** — Source files (articles, templates, styles, data)
 - **_site/** — 11ty build output (intermediate, not deployed)
 - **public_html/** — Production deployment directory (ready for upload)
 - **docs/** — Documentation and planning
 
 #### Output Files
+
 ```
 public_html/
 ├── index.html                    (Homepage)
@@ -162,6 +171,7 @@ public_html/
 ## Development
 
 ### Start Dev Server
+
 ```bash
 cd sites/antoniogalgano-uy.com
 pnpm install
@@ -171,6 +181,7 @@ pnpm run dev
 ```
 
 ### Add New Article
+
 ```bash
 # 1. Create file
 cp src/articles/TEMPLATE.md src/articles/2026-05-20-my-article.md
@@ -183,12 +194,15 @@ pnpm run build
 ```
 
 ### Customize Homepage
+
 Edit `src/pages/index.njk` — each section has clear Tailwind classes
 
 ### Customize News Page
+
 Edit `src/pages/news.njk` — grid, card, and CTA sections
 
 ### Update Metadata
+
 Edit `src/_data/site.json` for site-wide metadata (title, description, author, nav links)
 
 ---
@@ -212,6 +226,7 @@ All sites link to each other in footer "Sitios Relacionados" section.
 ## Deployment
 
 ### Pre-Deployment Checklist
+
 - [ ] Build completes without errors: `pnpm run build`
 - [ ] public_html/ directory is populated
 - [ ] All article slugs are unique
@@ -220,6 +235,7 @@ All sites link to each other in footer "Sitios Relacionados" section.
 - [ ] robots.txt references correct domain
 
 ### Upload to Server
+
 ```bash
 # SSH or cPanel file manager
 scp -r public_html/* user@server:/path/to/public_html/
@@ -231,6 +247,7 @@ scp -r public_html/* user@server:/path/to/public_html/
 ```
 
 ### Post-Deployment
+
 1. Visit https://antoniogalgano-uy.com/ — verify homepage loads
 2. Visit https://antoniogalgano-uy.com/news/ — verify article listing
 3. Visit article page — verify metadata and styling
@@ -242,7 +259,6 @@ scp -r public_html/* user@server:/path/to/public_html/
 
 ## Future Enhancements
 
-- [ ] Add `/en/` language variant (English)
 - [ ] Create additional articles (currently 2, aim for 5+ for better authority)
 - [ ] Add RSS feed (`/feed.xml`)
 - [ ] Add author bio section on article pages
@@ -258,12 +274,14 @@ scp -r public_html/* user@server:/path/to/public_html/
 ## Technical Notes
 
 ### Markdown Processing
+
 - **Engine:** markdown-it (with HTML support enabled)
 - **YAML Frontmatter:** gray-matter
 - **Collections:** 11ty's built-in filtering + sorting
 - **Filters:** readableDate (Spanish locale), isoDate, slugify, limit
 
 ### Template Engine
+
 - **Nunjucks** with 11ty integration
 - **Layout inheritance:** layout: base for all pages
 - **Data:** Global site data in `src/_data/site.json`
@@ -271,12 +289,14 @@ scp -r public_html/* user@server:/path/to/public_html/
 - **Loops:** `{% for item in collection %}`
 
 ### CSS & Styling
+
 - **Tailwind CSS v3.4** with custom config
 - **Color palette:** Slate (primary), Cyan (accent), Amber/Emerald (service cards)
 - **Utilities:** Responsive classes (sm:, md:, lg:), hover effects, transitions
 - **Custom CSS:** src/input.css for Tailwind directives
 
 ### Build & Performance
+
 - **11ty:** Fast, < 1 second builds
 - **CSS Compilation:** ~300ms with minification
 - **Deployment Copy:** < 100ms
@@ -314,11 +334,42 @@ scp -r public_html/* user@server:/path/to/public_html/
 ## Questions & Support
 
 For questions about:
+
 - **11ty configuration** → See `.eleventy.js` and README.md
 - **Article creation** → See docs/ARTICLE_GUIDE.md
 - **SEO signals** → See this file's SEO section
 - **Styling** → See Tailwind config in tailwind.config.js
 - **Deployment** → See Deployment section above
+
+---
+
+---
+
+## Audit — 2026-05-21 (Screaming Frog)
+
+### Errors fixed
+
+| # | Issue | Location | Fix applied |
+|---|---|---|---|
+| 1 | `areaServed` is not a valid property for `schema:Person` | `base.njk`, `public_html/index.html` | Removed. Geographic context covered by `address.addressCountry: UY`. |
+
+### Warnings fixed
+
+| # | Issue | Location | Fix applied |
+|---|---|---|---|
+| 2 | Hreflang tags on live server (`es`, `es-UY`, `es-419`, `x-default`→antoniogalgano.com) | Live server only (stale deploy) | Template and source never had these tags. Redeploy `public_html/` to clear. |
+| 3 | `es-419` invalid hreflang BCP 47 tag | Same stale deploy | Resolved by fix #2. |
+| 4 | `x-default` hreflang pointing to `antoniogalgano.com` | Same stale deploy | Resolved by fix #2. Sites are self-contained in this RSEO campaign — no cross-site hreflang clusters. |
+
+### RSEO site policy (confirmed)
+
+Each site in the network is **self-contained**: no hreflang cross-linking between sites. Inter-site signals are
+delivered exclusively through footer anchor links ("Sitios Relacionados"). This is intentional — hreflang clusters
+would semantically merge the sites in Google's eyes, defeating the goal of holding independent SERP positions.
+
+### Pending action
+
+- [ ] Redeploy `public_html/` to live server (clears stale hreflang from server-side HTML)
 
 ---
 

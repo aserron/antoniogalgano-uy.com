@@ -2,7 +2,8 @@
 
 **Consultor TI & Ciberseguridad en Uruguay**
 
-A static website for Antonio Galgano Votta, a technical consultant specializing in IT infrastructure and cybersecurity in Uruguay. Built with **Eleventy (11ty)** static site generator.
+A static website for Antonio Galgano Votta, a technical consultant specializing in IT infrastructure and cybersecurity
+in Uruguay. Built with **Eleventy (11ty)** static site generator.
 
 ---
 
@@ -42,6 +43,7 @@ This is a **static site generator** setup using:
 ### How It Works
 
 **Articles → Markdown files** (with YAML frontmatter)
+
 - Location: `src/articles/*.md`
 - Format: YAML frontmatter + Markdown content
 - Example:
@@ -62,11 +64,13 @@ This is a **static site generator** setup using:
   ```
 
 **Templates** (Nunjucks `.njk` files)
+
 - `src/_includes/base.njk` — Base layout with HEAD, HTML structure
 - `src/_includes/article.njk` — Article-specific layout with SEO + Schema.org
 - `src/pages/index.njk` — Home page layout
 
 **Build Process**
+
 1. 11ty reads all Markdown files in `src/articles/`
 2. Parses YAML frontmatter to extract metadata
 3. Renders Markdown → HTML using the `article.njk` layout
@@ -75,6 +79,7 @@ This is a **static site generator** setup using:
 6. Copies static assets (images, manifest, robots.txt)
 
 **Result**
+
 - Full HTML pages with SEO signals
 - Open Graph meta tags
 - Twitter Card data
@@ -114,6 +119,7 @@ npm run dev
 ```
 
 This:
+
 - Starts 11ty in watch mode (auto-rebuild on file changes)
 - Compiles Tailwind CSS to `_site/css/styles.css`
 - Serves the site at `http://localhost:8080`
@@ -125,6 +131,7 @@ npm run build
 ```
 
 This runs the complete build pipeline:
+
 1. Compiles 11ty: `src/articles/*.md` + templates → `_site/`
 2. Compiles Tailwind CSS with minification → `_site/css/styles.css`
 3. Copies `_site/` → `public_html/` (automatic deploy step)
@@ -206,6 +213,7 @@ scp -r public_html/* user@server:/path/to/public_html/
 ```
 
 **What gets updated automatically:**
+
 - ✅ Article page at `/news/{slug}/`
 - ✅ News listing at `/news/` (includes new article in grid)
 - ✅ Sitemap at `/sitemap.xml` (includes new article with lastmod date)
@@ -231,6 +239,7 @@ scp -r public_html/* user@server:/path/to/public_html/
 ### Edit Site Metadata
 
 Edit `src/_data/site.json` to change:
+
 - `title` — Site title
 - `description` — Site description
 - `url` — Site domain
@@ -266,6 +275,7 @@ Navigation links are defined in `src/_data/site.json`:
 ### Automatic SEO Signals
 
 Each article automatically includes:
+
 - ✓ Canonical URL (`<link rel="canonical">`)
 - ✓ Hreflang alternates (`<link rel="alternate" hreflang>`)
 - ✓ Open Graph meta tags (`og:title`, `og:description`, `og:image`)
@@ -278,19 +288,22 @@ Each article automatically includes:
 The sitemap is **dynamically generated** from your article collection:
 
 **How it works:**
+
 1. Create a new article: `src/articles/YYYY-MM-DD-slug.md`
 2. Run `pnpm run build`
 3. 11ty automatically:
-   - Adds article to `collections.articles`
-   - Re-renders `src/sitemap.njk` → `/sitemap.xml`
-   - Includes all articles + news index + homepage
+    - Adds article to `collections.articles`
+    - Re-renders `src/sitemap.njk` → `/sitemap.xml`
+    - Includes all articles + news index + homepage
 
 **Files:**
+
 - `src/sitemap.njk` — Nunjucks template that generates `/sitemap.xml`
 - `public/robots.txt` — References sitemap location
 - `public_html/sitemap.xml` — Auto-generated XML (ready for Google)
 
 **Sitemap includes:**
+
 - Homepage (priority 1.0, monthly)
 - News listing page (priority 0.9, weekly)
 - All articles (priority 0.8, never)
@@ -343,7 +356,8 @@ public_html/
 └── [other static files]
 ```
 
-**Note:** Only `public_html/` needs to be uploaded. The `_site/` folder is a build intermediate and not needed on the server.
+**Note:** Only `public_html/` needs to be uploaded. The `_site/` folder is a build intermediate and not needed on the
+server.
 
 ---
 
